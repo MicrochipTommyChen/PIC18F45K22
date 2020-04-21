@@ -1,0 +1,2615 @@
+
+
+Microchip MPLAB XC8 Assembler V2.10 build 88905656 
+                                                                                               Tue Apr 21 11:32:45 2020
+
+Microchip MPLAB XC8 C Compiler v2.10 (Pro license) build 20190730164152 Og9s 
+     1                           	processor	18F45K22
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	plic
+     5                           	psect	intcode,global,reloc=2,class=CODE,delta=1
+     6                           	psect	intcodelo,global,reloc=2,class=CODE,delta=1
+     7                           	psect	text0,global,reloc=2,class=CODE,delta=1
+     8                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     9                           	psect	bssCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+    10                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+    11                           	psect	text1,global,reloc=2,class=CODE,delta=1
+    12                           	psect	text2,global,reloc=2,class=CODE,delta=1
+    13                           	psect	text3,global,reloc=2,class=CODE,delta=1
+    14                           	psect	text4,global,reloc=2,class=CODE,delta=1
+    15                           	psect	text5,global,reloc=2,class=CODE,delta=1
+    16                           	psect	text6,global,reloc=2,class=CODE,delta=1
+    17                           	psect	text7,global,reloc=2,class=CODE,delta=1
+    18                           	psect	text8,global,reloc=2,class=CODE,delta=1
+    19                           	psect	text9,global,reloc=2,class=CODE,delta=1
+    20                           	psect	text10,global,reloc=2,class=CODE,delta=1
+    21                           	psect	text11,global,reloc=2,class=CODE,delta=1
+    22                           	psect	text12,global,reloc=2,class=CODE,delta=1
+    23                           	psect	text13,global,reloc=2,class=CODE,delta=1
+    24                           	psect	text14,global,reloc=2,class=CODE,delta=1
+    25                           	psect	text15,global,reloc=2,class=CODE,delta=1
+    26                           	psect	text16,global,reloc=2,class=CODE,delta=1
+    27                           	psect	text17,global,reloc=2,class=CODE,delta=1
+    28                           	psect	text18,global,reloc=2,class=CODE,delta=1
+    29                           	psect	text19,global,reloc=2,class=CODE,delta=1
+    30                           	psect	text20,global,reloc=2,class=CODE,delta=1
+    31                           	psect	text21,global,reloc=2,class=CODE,delta=1
+    32                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1,noexec
+    33                           	psect	rparam,global,class=COMRAM,space=1,delta=1,noexec
+    34                           	psect	pa_nodes0,global,class=CODE,delta=1
+    35                           	dabs	1,0x1,1,_EE_Key_2
+    36  0000                     
+    37                           ; Version 2.10
+    38                           ; Generated 31/07/2019 GMT
+    39                           ; 
+    40                           ; Copyright © 2019, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    41                           ; All rights reserved.
+    42                           ; 
+    43                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    44                           ; 
+    45                           ; Redistribution and use in source and binary forms, with or without modification, are
+    46                           ; permitted provided that the following conditions are met:
+    47                           ; 
+    48                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    49                           ;        conditions and the following disclaimer.
+    50                           ; 
+    51                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    52                           ;        of conditions and the following disclaimer in the documentation and/or other
+    53                           ;        materials provided with the distribution.
+    54                           ; 
+    55                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    56                           ;        software without specific prior written permission.
+    57                           ; 
+    58                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    59                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    60                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    61                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    62                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    63                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    64                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    65                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    66                           ; 
+    67                           ; 
+    68                           ; Code-generator required, PIC18F45K22 Definitions
+    69                           ; 
+    70                           ; SFR Addresses
+    71  0000                     
+    72                           	psect	intcode
+    73  000008  EF84 F002          	goto	1288	;# 
+    74                           
+    75                           	psect	intcodelo
+    76  000018  EF8C F002          	goto	1304	;# 
+    77  0000                     
+    78 ;; Function _EUSART1_DefaultFramingErrorHandler is unused but had its address taken
+    79  0000                     
+    80 ;; Function _EUSART1_DefaultOverrunErrorHandler is unused but had its address taken
+    81  0000                     
+    82 ;; Function _EUSART1_DefaultErrorHandler is unused but had its address taken
+    83  0000                     
+    84                           ; 1 bytes @ 0xC
+    85 ;;
+    86 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+    87 ;;
+    88 ;; *************** function _main *****************
+    89 ;; Defined at:
+    90 ;;		line 49 in file "main.c"
+    91 ;; Parameters:    Size  Location     Type
+    92 ;;		None
+    93 ;; Auto vars:     Size  Location     Type
+    94 ;;		None
+    95 ;; Return value:  Size  Location     Type
+    96 ;;                  1    wreg      void 
+    97 ;; Registers used:
+    98 ;;		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+    99 ;; Tracked objects:
+   100 ;;		On entry : 0/0
+   101 ;;		On exit  : 0/0
+   102 ;;		Unchanged: 0/0
+   103 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   104 ;;      Params:         0       0       0       0       0       0       0
+   105 ;;      Locals:         0       0       0       0       0       0       0
+   106 ;;      Temps:          0       0       0       0       0       0       0
+   107 ;;      Totals:         0       0       0       0       0       0       0
+   108 ;;Total ram usage:        0 bytes
+   109 ;; Hardware stack levels required when called:    6
+   110 ;; This function calls:
+   111 ;;		_SYSTEM_Initialize
+   112 ;; This function is called by:
+   113 ;;		Startup code after reset
+   114 ;; This function uses a non-reentrant model
+   115 ;;
+   116                           
+   117                           	psect	text0
+   118  00046A                     __ptext0:
+   119                           	opt callstack 0
+   120  0000                     _LATAbits	set	3977
+   121  0000                     _STKPTR	set	4092
+   122  0000                     _TABLAT	set	4085
+   123  0000                     _TBLPTRU	set	4088
+   124  0000                     _TBLPTRH	set	4087
+   125  0000                     _TBLPTRL	set	4086
+   126  0000                     _EECON1	set	4006
+   127  0000                     _EECON2	set	4007
+   128  0000                     _EECON1bits	set	4006
+   129  0000                     _TXSTA1bits	set	4012
+   130  0000                     _BAUDCONbits	set	4024
+   131  0000                     _BAUDCON1	set	4024
+   132  0000                     _RCSTA1	set	4011
+   133  0000                     _TXSTA1	set	4012
+   134  0000                     _SPBRG1	set	4015
+   135  0000                     _SPBRGH1	set	4016
+   136  0000                     _PIR1bits	set	3998
+   137  0000                     _RCSTA1bits	set	4011
+   138  0000                     _RCREG1	set	4014
+   139  0000                     _TXREG1	set	4013
+   140  0000                     _OSCCON	set	4051
+   141  0000                     _OSCCON2	set	4050
+   142  0000                     _OSCTUNE	set	3995
+   143  0000                     _LATE	set	3981
+   144  0000                     _LATD	set	3980
+   145  0000                     _LATA	set	3977
+   146  0000                     _LATB	set	3978
+   147  0000                     _LATC	set	3979
+   148  0000                     _TRISE	set	3990
+   149  0000                     _TRISA	set	3986
+   150  0000                     _TRISB	set	3987
+   151  0000                     _TRISC	set	3988
+   152  0000                     _TRISD	set	3989
+   153  0000                     _WPUB	set	3937
+   154  0000                     _INTCON2bits	set	4081
+   155  0000                     _TBLPTR	set	4086
+   156  0000                     _ANSELD	set	3899
+   157  0000                     _ANSELC	set	3898
+   158  0000                     _ANSELB	set	3897
+   159  0000                     _ANSELE	set	3900
+   160  0000                     _ANSELA	set	3896
+   161  0000                     
+   162                           ; #config settings
+   163  00046A                     _main:
+   164                           	opt callstack 25
+   165                           
+   166                           ;main.c: 52:     SYSTEM_Initialize();
+   167                           
+   168                           ;incstack = 0
+   169  00046A  EC13  F002         	call	_SYSTEM_Initialize	;wreg free
+   170  00046E                     l387:
+   171                           
+   172                           ;main.c: 71:     {;main.c: 73:     }
+   173  00046E  D7FF               	goto	l387
+   174  000470                     __end_of_main:
+   175                           	opt callstack 0
+   176                           
+   177                           	psect	cinit
+   178  0003FE                     __pcinit:
+   179                           	opt callstack 0
+   180  0003FE                     start_initialization:
+   181                           	opt callstack 0
+   182  0003FE                     __initialization:
+   183                           	opt callstack 0
+   184                           
+   185                           ; Clear objects allocated to COMRAM (77 bytes)
+   186  0003FE  EE00  F002         	lfsr	0,__pbssCOMRAM
+   187  000402  0E4D               	movlw	77
+   188  000404                     clear_0:
+   189  000404  6AEE               	clrf	postinc0,c
+   190  000406  06E8               	decf	wreg,f,c
+   191  000408  E1FD               	bnz	clear_0
+   192  00040A                     end_of_initialization:
+   193                           	opt callstack 0
+   194  00040A                     __end_of__initialization:
+   195                           	opt callstack 0
+   196  00040A  0E00               	movlw	low (__Lmediumconst shr (0+16))
+   197  00040C  6EF8               	movwf	tblptru,c
+   198  00040E  0100               	movlb	0
+   199  000410  EF35  F002         	goto	_main	;jump to C main() function
+   200                           
+   201                           	psect	bssCOMRAM
+   202  000002                     __pbssCOMRAM:
+   203                           	opt callstack 0
+   204  000002                     _frame:
+   205                           	opt callstack 0
+   206  000002                     	ds	73
+   207  00004B                     _check_sum:
+   208                           	opt callstack 0
+   209  00004B                     	ds	2
+   210  00004D                     _eusart1RxLastError:
+   211                           	opt callstack 0
+   212  00004D                     	ds	1
+   213  00004E                     _reset_pending:
+   214                           	opt callstack 0
+   215  00004E                     	ds	1
+   216                           
+   217                           	psect	cstackCOMRAM
+   218  00004F                     __pcstackCOMRAM:
+   219                           	opt callstack 0
+   220  00004F                     ??_Write_Flash:
+   221  00004F                     ??_Erase_Flash:
+   222  00004F                     ??_Read_Config:
+   223  00004F                     ??_Write_Config:
+   224  00004F                     Get_Version_Data@i:
+   225                           	opt callstack 0
+   226  00004F                     EUSART1_Write@txData:
+   227                           	opt callstack 0
+   228  00004F                     Calc_Checksum@length:
+   229                           	opt callstack 0
+   230  00004F                     EUSART1_SetFramingErrorHandler@interruptHandler:
+   231                           	opt callstack 0
+   232  00004F                     EUSART1_SetOverrunErrorHandler@interruptHandler:
+   233                           	opt callstack 0
+   234  00004F                     EUSART1_SetErrorHandler@interruptHandler:
+   235                           	opt callstack 0
+   236                           
+   237                           ; 2 bytes @ 0x0
+   238  00004F                     	ds	2
+   239  000051                     Read_Config@i:
+   240                           	opt callstack 0
+   241  000051                     Write_Config@i:
+   242                           	opt callstack 0
+   243  000051                     Calc_Checksum@i:
+   244                           	opt callstack 0
+   245                           
+   246                           ; 2 bytes @ 0x2
+   247  000051                     	ds	1
+   248  000052                     Erase_Flash@i:
+   249                           	opt callstack 0
+   250                           
+   251                           ; 2 bytes @ 0x3
+   252  000052                     	ds	1
+   253  000053                     Bootload_Required@Stored_Checksum:
+   254                           	opt callstack 0
+   255  000053                     Write_Flash@i:
+   256                           	opt callstack 0
+   257                           
+   258                           ; 2 bytes @ 0x4
+   259  000053                     	ds	2
+   260  000055                     ??_ProcessBootBuffer:
+   261                           
+   262                           ; 1 bytes @ 0x6
+   263  000055                     	ds	2
+   264  000057                     ProcessBootBuffer@len:
+   265                           	opt callstack 0
+   266                           
+   267                           ; 1 bytes @ 0x8
+   268  000057                     	ds	1
+   269  000058                     Run_Bootloader@ch:
+   270                           	opt callstack 0
+   271                           
+   272                           ; 1 bytes @ 0x9
+   273  000058                     	ds	1
+   274  000059                     Run_Bootloader@msg_length:
+   275                           	opt callstack 0
+   276                           
+   277                           ; 1 bytes @ 0xA
+   278  000059                     	ds	1
+   279  00005A                     Run_Bootloader@index:
+   280                           	opt callstack 0
+   281                           
+   282                           ; 1 bytes @ 0xB
+   283  00005A                     	ds	1
+   284  00005B                     
+   285 ;; *************** function _SYSTEM_Initialize *****************
+   286 ;; Defined at:
+   287 ;;		line 50 in file "mcc_generated_files/mcc.c"
+   288 ;; Parameters:    Size  Location     Type
+   289 ;;		None
+   290 ;; Auto vars:     Size  Location     Type
+   291 ;;		None
+   292 ;; Return value:  Size  Location     Type
+   293 ;;                  1    wreg      void 
+   294 ;; Registers used:
+   295 ;;		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+   296 ;; Tracked objects:
+   297 ;;		On entry : 0/0
+   298 ;;		On exit  : 0/0
+   299 ;;		Unchanged: 0/0
+   300 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   301 ;;      Params:         0       0       0       0       0       0       0
+   302 ;;      Locals:         0       0       0       0       0       0       0
+   303 ;;      Temps:          0       0       0       0       0       0       0
+   304 ;;      Totals:         0       0       0       0       0       0       0
+   305 ;;Total ram usage:        0 bytes
+   306 ;; Hardware stack levels used:    1
+   307 ;; Hardware stack levels required when called:    5
+   308 ;; This function calls:
+   309 ;;		_BOOTLOADER_Initialize
+   310 ;;		_EUSART1_Initialize
+   311 ;;		_OSCILLATOR_Initialize
+   312 ;;		_PIN_MANAGER_Initialize
+   313 ;; This function is called by:
+   314 ;;		_main
+   315 ;; This function uses a non-reentrant model
+   316 ;;
+   317                           
+   318                           	psect	text1
+   319  000426                     __ptext1:
+   320                           	opt callstack 0
+   321  000426                     _SYSTEM_Initialize:
+   322                           	opt callstack 25
+   323                           
+   324                           ;mcc_generated_files/mcc.c: 53:     PIN_MANAGER_Initialize();
+   325                           
+   326                           ;incstack = 0
+   327  000426  ECBF  F001         	call	_PIN_MANAGER_Initialize	;wreg free
+   328                           
+   329                           ;mcc_generated_files/mcc.c: 54:     OSCILLATOR_Initialize();
+   330  00042A  EC23  F002         	call	_OSCILLATOR_Initialize	;wreg free
+   331                           
+   332                           ; BSR set to: 15
+   333                           ;mcc_generated_files/mcc.c: 55:     EUSART1_Initialize();
+   334  00042E  ECD9  F001         	call	_EUSART1_Initialize	;wreg free
+   335                           
+   336                           ; BSR set to: 15
+   337                           ;mcc_generated_files/mcc.c: 56:     BOOTLOADER_Initialize();
+   338  000432  EFF3  F001         	goto	_BOOTLOADER_Initialize	;wreg free
+   339  000436                     __end_of_SYSTEM_Initialize:
+   340                           	opt callstack 0
+   341                           
+   342 ;; *************** function _PIN_MANAGER_Initialize *****************
+   343 ;; Defined at:
+   344 ;;		line 55 in file "mcc_generated_files/pin_manager.c"
+   345 ;; Parameters:    Size  Location     Type
+   346 ;;		None
+   347 ;; Auto vars:     Size  Location     Type
+   348 ;;		None
+   349 ;; Return value:  Size  Location     Type
+   350 ;;                  1    wreg      void 
+   351 ;; Registers used:
+   352 ;;		wreg, status,2
+   353 ;; Tracked objects:
+   354 ;;		On entry : 0/0
+   355 ;;		On exit  : 3F/F
+   356 ;;		Unchanged: 0/0
+   357 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   358 ;;      Params:         0       0       0       0       0       0       0
+   359 ;;      Locals:         0       0       0       0       0       0       0
+   360 ;;      Temps:          0       0       0       0       0       0       0
+   361 ;;      Totals:         0       0       0       0       0       0       0
+   362 ;;Total ram usage:        0 bytes
+   363 ;; Hardware stack levels used:    1
+   364 ;; This function calls:
+   365 ;;		Nothing
+   366 ;; This function is called by:
+   367 ;;		_SYSTEM_Initialize
+   368 ;; This function uses a non-reentrant model
+   369 ;;
+   370                           
+   371                           	psect	text2
+   372  00037E                     __ptext2:
+   373                           	opt callstack 0
+   374  00037E                     _PIN_MANAGER_Initialize:
+   375                           	opt callstack 29
+   376                           
+   377                           ;mcc_generated_files/pin_manager.c: 60:     LATE = 0x00;
+   378                           
+   379                           ;incstack = 0
+   380  00037E  6A8D               	clrf	141,c	;volatile
+   381                           
+   382                           ;mcc_generated_files/pin_manager.c: 61:     LATD = 0x00;
+   383  000380  6A8C               	clrf	140,c	;volatile
+   384                           
+   385                           ;mcc_generated_files/pin_manager.c: 62:     LATA = 0x00;
+   386  000382  6A89               	clrf	137,c	;volatile
+   387                           
+   388                           ;mcc_generated_files/pin_manager.c: 63:     LATB = 0x00;
+   389  000384  6A8A               	clrf	138,c	;volatile
+   390                           
+   391                           ;mcc_generated_files/pin_manager.c: 64:     LATC = 0x00;
+   392  000386  6A8B               	clrf	139,c	;volatile
+   393                           
+   394                           ;mcc_generated_files/pin_manager.c: 69:     TRISE = 0x07;
+   395  000388  0E07               	movlw	7
+   396  00038A  6E96               	movwf	150,c	;volatile
+   397                           
+   398                           ;mcc_generated_files/pin_manager.c: 70:     TRISA = 0x7F;
+   399  00038C  0E7F               	movlw	127
+   400  00038E  6E92               	movwf	146,c	;volatile
+   401                           
+   402                           ;mcc_generated_files/pin_manager.c: 71:     TRISB = 0xFF;
+   403  000390  6893               	setf	147,c	;volatile
+   404                           
+   405                           ;mcc_generated_files/pin_manager.c: 72:     TRISC = 0xBF;
+   406  000392  0EBF               	movlw	191
+   407  000394  6E94               	movwf	148,c	;volatile
+   408                           
+   409                           ;mcc_generated_files/pin_manager.c: 73:     TRISD = 0xFF;
+   410  000396  6895               	setf	149,c	;volatile
+   411                           
+   412                           ;mcc_generated_files/pin_manager.c: 78:     ANSELD = 0xFF;
+   413  000398  010F               	movlb	15	; () banked
+   414  00039A  693B               	setf	59,b	;volatile
+   415                           
+   416                           ;mcc_generated_files/pin_manager.c: 79:     ANSELC = 0x3C;
+   417  00039C  0E3C               	movlw	60
+   418  00039E  6F3A               	movwf	58,b	;volatile
+   419                           
+   420                           ;mcc_generated_files/pin_manager.c: 80:     ANSELB = 0x3F;
+   421  0003A0  0E3F               	movlw	63
+   422  0003A2  6F39               	movwf	57,b	;volatile
+   423                           
+   424                           ;mcc_generated_files/pin_manager.c: 81:     ANSELE = 0x07;
+   425  0003A4  0E07               	movlw	7
+   426  0003A6  6F3C               	movwf	60,b	;volatile
+   427                           
+   428                           ;mcc_generated_files/pin_manager.c: 82:     ANSELA = 0x2F;
+   429  0003A8  0E2F               	movlw	47
+   430  0003AA  6F38               	movwf	56,b	;volatile
+   431                           
+   432                           ; BSR set to: 15
+   433                           ;mcc_generated_files/pin_manager.c: 87:     WPUB = 0x00;
+   434  0003AC  6A61               	clrf	97,c	;volatile
+   435                           
+   436                           ; BSR set to: 15
+   437                           ;mcc_generated_files/pin_manager.c: 88:     INTCON2bits.nRBPU = 1;
+   438  0003AE  8EF1               	bsf	241,7,c	;volatile
+   439                           
+   440                           ; BSR set to: 15
+   441  0003B0  0012               	return		;funcret
+   442  0003B2                     __end_of_PIN_MANAGER_Initialize:
+   443                           	opt callstack 0
+   444                           
+   445 ;; *************** function _OSCILLATOR_Initialize *****************
+   446 ;; Defined at:
+   447 ;;		line 59 in file "mcc_generated_files/mcc.c"
+   448 ;; Parameters:    Size  Location     Type
+   449 ;;		None
+   450 ;; Auto vars:     Size  Location     Type
+   451 ;;		None
+   452 ;; Return value:  Size  Location     Type
+   453 ;;                  1    wreg      void 
+   454 ;; Registers used:
+   455 ;;		wreg, status,2
+   456 ;; Tracked objects:
+   457 ;;		On entry : 3F/F
+   458 ;;		On exit  : 3F/F
+   459 ;;		Unchanged: 3E/0
+   460 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   461 ;;      Params:         0       0       0       0       0       0       0
+   462 ;;      Locals:         0       0       0       0       0       0       0
+   463 ;;      Temps:          0       0       0       0       0       0       0
+   464 ;;      Totals:         0       0       0       0       0       0       0
+   465 ;;Total ram usage:        0 bytes
+   466 ;; Hardware stack levels used:    1
+   467 ;; This function calls:
+   468 ;;		Nothing
+   469 ;; This function is called by:
+   470 ;;		_SYSTEM_Initialize
+   471 ;; This function uses a non-reentrant model
+   472 ;;
+   473                           
+   474                           	psect	text3
+   475  000446                     __ptext3:
+   476                           	opt callstack 0
+   477  000446                     _OSCILLATOR_Initialize:
+   478                           	opt callstack 29
+   479                           
+   480                           ; BSR set to: 15
+   481                           ;mcc_generated_files/mcc.c: 62:     OSCCON = 0x30;
+   482                           
+   483                           ; BSR set to: 15
+   484                           ;incstack = 0
+   485  000446  0E30               	movlw	48
+   486  000448  6ED3               	movwf	211,c	;volatile
+   487                           
+   488                           ;mcc_generated_files/mcc.c: 64:     OSCCON2 = 0x04;
+   489  00044A  0E04               	movlw	4
+   490  00044C  6ED2               	movwf	210,c	;volatile
+   491                           
+   492                           ; BSR set to: 15
+   493                           ;mcc_generated_files/mcc.c: 66:     OSCTUNE = 0x00;
+   494  00044E  6A9B               	clrf	155,c	;volatile
+   495                           
+   496                           ; BSR set to: 15
+   497  000450  0012               	return		;funcret
+   498  000452                     __end_of_OSCILLATOR_Initialize:
+   499                           	opt callstack 0
+   500                           
+   501 ;; *************** function _EUSART1_Initialize *****************
+   502 ;; Defined at:
+   503 ;;		line 66 in file "mcc_generated_files/eusart1.c"
+   504 ;; Parameters:    Size  Location     Type
+   505 ;;		None
+   506 ;; Auto vars:     Size  Location     Type
+   507 ;;		None
+   508 ;; Return value:  Size  Location     Type
+   509 ;;                  1    wreg      void 
+   510 ;; Registers used:
+   511 ;;		wreg, status,2, status,0, cstack
+   512 ;; Tracked objects:
+   513 ;;		On entry : 3F/F
+   514 ;;		On exit  : 3F/F
+   515 ;;		Unchanged: 3E/0
+   516 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   517 ;;      Params:         0       0       0       0       0       0       0
+   518 ;;      Locals:         0       0       0       0       0       0       0
+   519 ;;      Temps:          0       0       0       0       0       0       0
+   520 ;;      Totals:         0       0       0       0       0       0       0
+   521 ;;Total ram usage:        0 bytes
+   522 ;; Hardware stack levels used:    1
+   523 ;; Hardware stack levels required when called:    1
+   524 ;; This function calls:
+   525 ;;		_EUSART1_SetErrorHandler
+   526 ;;		_EUSART1_SetFramingErrorHandler
+   527 ;;		_EUSART1_SetOverrunErrorHandler
+   528 ;; This function is called by:
+   529 ;;		_SYSTEM_Initialize
+   530 ;; This function uses a non-reentrant model
+   531 ;;
+   532                           
+   533                           	psect	text4
+   534  0003B2                     __ptext4:
+   535                           	opt callstack 0
+   536  0003B2                     _EUSART1_Initialize:
+   537                           	opt callstack 28
+   538                           
+   539                           ; BSR set to: 15
+   540                           ;mcc_generated_files/eusart1.c: 71:     BAUDCON1 = 0x08;
+   541                           
+   542                           ; BSR set to: 15
+   543                           ;incstack = 0
+   544  0003B2  0E08               	movlw	8
+   545  0003B4  6EB8               	movwf	184,c	;volatile
+   546                           
+   547                           ;mcc_generated_files/eusart1.c: 74:     RCSTA1 = 0x90;
+   548  0003B6  0E90               	movlw	144
+   549  0003B8  6EAB               	movwf	171,c	;volatile
+   550                           
+   551                           ;mcc_generated_files/eusart1.c: 77:     TXSTA1 = 0x24;
+   552  0003BA  0E24               	movlw	36
+   553  0003BC  6EAC               	movwf	172,c	;volatile
+   554                           
+   555                           ;mcc_generated_files/eusart1.c: 80:     SPBRG1 = 0x19;
+   556  0003BE  0E19               	movlw	25
+   557  0003C0  6EAF               	movwf	175,c	;volatile
+   558                           
+   559                           ; BSR set to: 15
+   560                           ;mcc_generated_files/eusart1.c: 83:     SPBRGH1 = 0x00;
+   561  0003C2  6AB0               	clrf	176,c	;volatile
+   562                           
+   563                           ; BSR set to: 15
+   564                           ;mcc_generated_files/eusart1.c: 86:     EUSART1_SetFramingErrorHandler(EUSART1_DefaultFr
+      +                          amingErrorHandler);
+   565  0003C4  0E00               	movlw	0
+   566  0003C6  6A4F               	clrf	EUSART1_SetFramingErrorHandler@interruptHandler^0,c
+   567  0003C8  6A50               	clrf	(EUSART1_SetFramingErrorHandler@interruptHandler+1)^0,c
+   568  0003CA  EC39  F002         	call	_EUSART1_SetFramingErrorHandler	;wreg free
+   569                           
+   570                           ; BSR set to: 15
+   571                           ;mcc_generated_files/eusart1.c: 87:     EUSART1_SetOverrunErrorHandler(EUSART1_DefaultOv
+      +                          errunErrorHandler);
+   572  0003CE  0E00               	movlw	0
+   573  0003D0  6A4F               	clrf	EUSART1_SetOverrunErrorHandler@interruptHandler^0,c
+   574  0003D2  6A50               	clrf	(EUSART1_SetOverrunErrorHandler@interruptHandler+1)^0,c
+   575  0003D4  EC38  F002         	call	_EUSART1_SetOverrunErrorHandler	;wreg free
+   576                           
+   577                           ; BSR set to: 15
+   578                           ;mcc_generated_files/eusart1.c: 88:     EUSART1_SetErrorHandler(EUSART1_DefaultErrorHand
+      +                          ler);
+   579  0003D8  0E00               	movlw	0
+   580  0003DA  6A4F               	clrf	EUSART1_SetErrorHandler@interruptHandler^0,c
+   581  0003DC  6A50               	clrf	(EUSART1_SetErrorHandler@interruptHandler+1)^0,c
+   582  0003DE  EC3A  F002         	call	_EUSART1_SetErrorHandler	;wreg free
+   583                           
+   584                           ; BSR set to: 15
+   585                           ;mcc_generated_files/eusart1.c: 90:     eusart1RxLastError.status = 0;
+   586  0003E2  6A4D               	clrf	_eusart1RxLastError^0,c	;volatile
+   587                           
+   588                           ; BSR set to: 15
+   589  0003E4  0012               	return		;funcret
+   590  0003E6                     __end_of_EUSART1_Initialize:
+   591                           	opt callstack 0
+   592                           
+   593 ;; *************** function _EUSART1_SetOverrunErrorHandler *****************
+   594 ;; Defined at:
+   595 ;;		line 161 in file "mcc_generated_files/eusart1.c"
+   596 ;; Parameters:    Size  Location     Type
+   597 ;;  interruptHan    2    0[COMRAM] PTR FTN()void 
+   598 ;;		 -> EUSART1_DefaultOverrunErrorHandler(1), 
+   599 ;; Auto vars:     Size  Location     Type
+   600 ;;		None
+   601 ;; Return value:  Size  Location     Type
+   602 ;;                  1    wreg      void 
+   603 ;; Registers used:
+   604 ;;		None
+   605 ;; Tracked objects:
+   606 ;;		On entry : 3F/F
+   607 ;;		On exit  : 3F/F
+   608 ;;		Unchanged: 3E/0
+   609 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   610 ;;      Params:         2       0       0       0       0       0       0
+   611 ;;      Locals:         0       0       0       0       0       0       0
+   612 ;;      Temps:          0       0       0       0       0       0       0
+   613 ;;      Totals:         2       0       0       0       0       0       0
+   614 ;;Total ram usage:        2 bytes
+   615 ;; Hardware stack levels used:    1
+   616 ;; This function calls:
+   617 ;;		Nothing
+   618 ;; This function is called by:
+   619 ;;		_EUSART1_Initialize
+   620 ;; This function uses a non-reentrant model
+   621 ;;
+   622                           
+   623                           	psect	text5
+   624  000470                     __ptext5:
+   625                           	opt callstack 0
+   626  000470                     _EUSART1_SetOverrunErrorHandler:
+   627                           	opt callstack 28
+   628                           
+   629                           ; BSR set to: 15
+   630                           
+   631                           ; BSR set to: 15
+   632                           ;incstack = 0
+   633  000470  0012               	return		;funcret
+   634  000472                     __end_of_EUSART1_SetOverrunErrorHandler:
+   635                           	opt callstack 0
+   636                           
+   637 ;; *************** function _EUSART1_SetFramingErrorHandler *****************
+   638 ;; Defined at:
+   639 ;;		line 157 in file "mcc_generated_files/eusart1.c"
+   640 ;; Parameters:    Size  Location     Type
+   641 ;;  interruptHan    2    0[COMRAM] PTR FTN()void 
+   642 ;;		 -> EUSART1_DefaultFramingErrorHandler(1), 
+   643 ;; Auto vars:     Size  Location     Type
+   644 ;;		None
+   645 ;; Return value:  Size  Location     Type
+   646 ;;                  1    wreg      void 
+   647 ;; Registers used:
+   648 ;;		None
+   649 ;; Tracked objects:
+   650 ;;		On entry : 3F/F
+   651 ;;		On exit  : 3F/F
+   652 ;;		Unchanged: 3E/0
+   653 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   654 ;;      Params:         2       0       0       0       0       0       0
+   655 ;;      Locals:         0       0       0       0       0       0       0
+   656 ;;      Temps:          0       0       0       0       0       0       0
+   657 ;;      Totals:         2       0       0       0       0       0       0
+   658 ;;Total ram usage:        2 bytes
+   659 ;; Hardware stack levels used:    1
+   660 ;; This function calls:
+   661 ;;		Nothing
+   662 ;; This function is called by:
+   663 ;;		_EUSART1_Initialize
+   664 ;; This function uses a non-reentrant model
+   665 ;;
+   666                           
+   667                           	psect	text6
+   668  000472                     __ptext6:
+   669                           	opt callstack 0
+   670  000472                     _EUSART1_SetFramingErrorHandler:
+   671                           	opt callstack 28
+   672                           
+   673                           ; BSR set to: 15
+   674                           
+   675                           ; BSR set to: 15
+   676                           ;incstack = 0
+   677  000472  0012               	return		;funcret
+   678  000474                     __end_of_EUSART1_SetFramingErrorHandler:
+   679                           	opt callstack 0
+   680                           
+   681 ;; *************** function _EUSART1_SetErrorHandler *****************
+   682 ;; Defined at:
+   683 ;;		line 165 in file "mcc_generated_files/eusart1.c"
+   684 ;; Parameters:    Size  Location     Type
+   685 ;;  interruptHan    2    0[COMRAM] PTR FTN()void 
+   686 ;;		 -> EUSART1_DefaultErrorHandler(1), 
+   687 ;; Auto vars:     Size  Location     Type
+   688 ;;		None
+   689 ;; Return value:  Size  Location     Type
+   690 ;;                  1    wreg      void 
+   691 ;; Registers used:
+   692 ;;		None
+   693 ;; Tracked objects:
+   694 ;;		On entry : 3F/F
+   695 ;;		On exit  : 3F/F
+   696 ;;		Unchanged: 3E/0
+   697 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   698 ;;      Params:         2       0       0       0       0       0       0
+   699 ;;      Locals:         0       0       0       0       0       0       0
+   700 ;;      Temps:          0       0       0       0       0       0       0
+   701 ;;      Totals:         2       0       0       0       0       0       0
+   702 ;;Total ram usage:        2 bytes
+   703 ;; Hardware stack levels used:    1
+   704 ;; This function calls:
+   705 ;;		Nothing
+   706 ;; This function is called by:
+   707 ;;		_EUSART1_Initialize
+   708 ;; This function uses a non-reentrant model
+   709 ;;
+   710                           
+   711                           	psect	text7
+   712  000474                     __ptext7:
+   713                           	opt callstack 0
+   714  000474                     _EUSART1_SetErrorHandler:
+   715                           	opt callstack 28
+   716                           
+   717                           ; BSR set to: 15
+   718                           
+   719                           ; BSR set to: 15
+   720                           ;incstack = 0
+   721  000474  0012               	return		;funcret
+   722  000476                     __end_of_EUSART1_SetErrorHandler:
+   723                           	opt callstack 0
+   724                           
+   725 ;; *************** function _BOOTLOADER_Initialize *****************
+   726 ;; Defined at:
+   727 ;;		line 135 in file "mcc_generated_files/pic18f_bootload.c"
+   728 ;; Parameters:    Size  Location     Type
+   729 ;;		None
+   730 ;; Auto vars:     Size  Location     Type
+   731 ;;		None
+   732 ;; Return value:  Size  Location     Type
+   733 ;;                  1    wreg      void 
+   734 ;; Registers used:
+   735 ;;		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+   736 ;; Tracked objects:
+   737 ;;		On entry : 0/F
+   738 ;;		On exit  : 0/0
+   739 ;;		Unchanged: 0/0
+   740 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   741 ;;      Params:         0       0       0       0       0       0       0
+   742 ;;      Locals:         0       0       0       0       0       0       0
+   743 ;;      Temps:          0       0       0       0       0       0       0
+   744 ;;      Totals:         0       0       0       0       0       0       0
+   745 ;;Total ram usage:        0 bytes
+   746 ;; Hardware stack levels used:    1
+   747 ;; Hardware stack levels required when called:    4
+   748 ;; This function calls:
+   749 ;;		_Bootload_Required
+   750 ;;		_Run_Bootloader
+   751 ;; This function is called by:
+   752 ;;		_SYSTEM_Initialize
+   753 ;; This function uses a non-reentrant model
+   754 ;;
+   755                           
+   756                           	psect	text8
+   757  0003E6                     __ptext8:
+   758                           	opt callstack 0
+   759  0003E6                     _BOOTLOADER_Initialize:
+   760                           	opt callstack 25
+   761                           
+   762                           ;mcc_generated_files/pic18f_bootload.c: 137:     LATAbits.LATA7 = 1;
+   763                           
+   764                           ; BSR set to: 15
+   765                           ;incstack = 0
+   766  0003E6  8E89               	bsf	137,7,c	;volatile
+   767                           
+   768                           ;mcc_generated_files/pic18f_bootload.c: 138:     if (Bootload_Required () == 1)
+   769  0003E8  ECA1  F001         	call	_Bootload_Required	;wreg free
+   770  0003EC  06E8               	decf	wreg,f,c
+   771  0003EE  E102               	bnz	l1382
+   772                           
+   773                           ;mcc_generated_files/pic18f_bootload.c: 139:     {;mcc_generated_files/pic18f_bootload.c
+      +                          : 140:         Run_Bootloader ();
+   774  0003F0  EC10  F000         	call	_Run_Bootloader	;wreg free
+   775  0003F4                     l1382:
+   776                           
+   777                           ;mcc_generated_files/pic18f_bootload.c: 142:     STKPTR = 0x00;
+   778  0003F4  6AFC               	clrf	252,c	;volatile
+   779                           
+   780                           ;mcc_generated_files/pic18f_bootload.c: 143:  LATAbits.LATA7 = 0;
+   781  0003F6  9E89               	bcf	137,7,c	;volatile
+   782  0003F8  EF80 F002          	goto	1280	;# 
+   783  0003FC  0012               	return		;funcret
+   784  0003FE                     __end_of_BOOTLOADER_Initialize:
+   785                           	opt callstack 0
+   786                           
+   787 ;; *************** function _Run_Bootloader *****************
+   788 ;; Defined at:
+   789 ;;		line 59 in file "mcc_generated_files/pic18f_uart.c"
+   790 ;; Parameters:    Size  Location     Type
+   791 ;;		None
+   792 ;; Auto vars:     Size  Location     Type
+   793 ;;  ch              1    9[COMRAM] unsigned char 
+   794 ;;  index           1   11[COMRAM] volatile unsigned char 
+   795 ;;  msg_length      1   10[COMRAM] unsigned char 
+   796 ;; Return value:  Size  Location     Type
+   797 ;;                  1    wreg      void 
+   798 ;; Registers used:
+   799 ;;		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+   800 ;; Tracked objects:
+   801 ;;		On entry : 0/F
+   802 ;;		On exit  : 0/0
+   803 ;;		Unchanged: 0/0
+   804 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   805 ;;      Params:         0       0       0       0       0       0       0
+   806 ;;      Locals:         3       0       0       0       0       0       0
+   807 ;;      Temps:          0       0       0       0       0       0       0
+   808 ;;      Totals:         3       0       0       0       0       0       0
+   809 ;;Total ram usage:        3 bytes
+   810 ;; Hardware stack levels used:    1
+   811 ;; Hardware stack levels required when called:    3
+   812 ;; This function calls:
+   813 ;;		_Check_Device_Reset
+   814 ;;		_EUSART1_Read
+   815 ;;		_EUSART1_Write
+   816 ;;		_ProcessBootBuffer
+   817 ;; This function is called by:
+   818 ;;		_BOOTLOADER_Initialize
+   819 ;; This function uses a non-reentrant model
+   820 ;;
+   821                           
+   822                           	psect	text9
+   823  000020                     __ptext9:
+   824                           	opt callstack 0
+   825  000020                     _Run_Bootloader:
+   826                           	opt callstack 25
+   827                           
+   828                           ;mcc_generated_files/pic18f_uart.c: 65:     {;mcc_generated_files/pic18f_uart.c: 66:    
+      +                               while (TXSTA1bits.TRMT == 0);
+   829                           
+   830                           ;incstack = 0
+   831                           ;mcc_generated_files/pic18f_uart.c: 61:     volatile uint8_t index;;mcc_generated_files/
+      +                          pic18f_uart.c: 62:     uint8_t msg_length;;mcc_generated_files/pic18f_uart.c: 64:     wh
+      +                          ile (1)
+   832  000020  A2AC               	btfss	172,1,c	;volatile
+   833  000022  D7FE               	goto	_Run_Bootloader
+   834                           
+   835                           ;mcc_generated_files/pic18f_uart.c: 68:         Check_Device_Reset ();
+   836  000024  EC2F  F002         	call	_Check_Device_Reset	;wreg free
+   837  000028  D004               	goto	L1
+   838  00002A                     l215:
+   839                           
+   840                           ;mcc_generated_files/pic18f_uart.c: 75:         {;mcc_generated_files/pic18f_uart.c: 76:
+      +                                       if (BAUDCONbits.ABDOVF == 1)
+   841  00002A  AEB8               	btfss	184,7,c	;volatile
+   842  00002C  D003               	goto	l214
+   843                           
+   844                           ;mcc_generated_files/pic18f_uart.c: 77:             {;mcc_generated_files/pic18f_uart.c:
+      +                           78:                 BAUDCONbits.ABDEN = 0;
+   845  00002E  90B8               	bcf	184,0,c	;volatile
+   846                           
+   847                           ;mcc_generated_files/pic18f_uart.c: 79:                 BAUDCONbits.ABDOVF = 0;
+   848  000030  9EB8               	bcf	184,7,c	;volatile
+   849  000032                     L1:
+   850                           
+   851                           ;mcc_generated_files/pic18f_uart.c: 80:                 BAUDCONbits.ABDEN = 1;
+   852  000032  80B8               	bsf	184,0,c	;volatile
+   853  000034                     l214:
+   854                           
+   855                           ;mcc_generated_files/pic18f_uart.c: 74:         while (BAUDCONbits.ABDEN == 1)
+   856  000034  B0B8               	btfsc	184,0,c	;volatile
+   857  000036  D7F9               	goto	l215
+   858                           
+   859                           ;mcc_generated_files/pic18f_uart.c: 84:         index = EUSART1_Read();
+   860  000038  EC0A  F002         	call	_EUSART1_Read	;wreg free
+   861  00003C  6E5A               	movwf	Run_Bootloader@index^0,c	;volatile
+   862                           
+   863                           ;mcc_generated_files/pic18f_uart.c: 90:         index = 0;
+   864  00003E  6A5A               	clrf	Run_Bootloader@index^0,c	;volatile
+   865                           
+   866                           ;mcc_generated_files/pic18f_uart.c: 91:         msg_length = 9;
+   867  000040  0E09               	movlw	9
+   868  000042  6E59               	movwf	Run_Bootloader@msg_length^0,c
+   869                           
+   870                           ;mcc_generated_files/pic18f_uart.c: 92:         uint8_t ch;;mcc_generated_files/pic18f_u
+      +                          art.c: 94:         while (index < msg_length)
+   871  000044  D015               	goto	l218
+   872  000046                     l1348:
+   873                           
+   874                           ;mcc_generated_files/pic18f_uart.c: 95:         {;mcc_generated_files/pic18f_uart.c: 96:
+      +                                       ch = EUSART1_Read();
+   875  000046  EC0A  F002         	call	_EUSART1_Read	;wreg free
+   876  00004A  6E58               	movwf	Run_Bootloader@ch^0,c
+   877                           
+   878                           ;mcc_generated_files/pic18f_uart.c: 97:             frame.buffer [index ++] = ch;
+   879  00004C  D825               	call	PL16	;call to abstracted procedure
+   880  00004E  C058  FFDF         	movff	Run_Bootloader@ch,indf2
+   881  000052  2A5A               	incf	Run_Bootloader@index^0,f,c	;volatile
+   882                           
+   883                           ;mcc_generated_files/pic18f_uart.c: 98:             if (index == 4)
+   884  000054  0E04               	movlw	4
+   885  000056  185A               	xorwf	Run_Bootloader@index^0,w,c	;volatile
+   886  000058  E10B               	bnz	l218
+   887                           
+   888                           ;mcc_generated_files/pic18f_uart.c: 99:             {;mcc_generated_files/pic18f_uart.c:
+      +                           100:                 if ((frame.command == 2)
+   889  00005A  0E02               	movlw	2
+   890  00005C  1802               	xorwf	_frame^0,w,c
+   891  00005E  E006               	bz	u270
+   892  000060  0E05               	movlw	5
+   893  000062  1802               	xorwf	_frame^0,w,c
+   894  000064  E003               	bz	u270
+   895  000066  0E07               	movlw	7
+   896  000068  1802               	xorwf	_frame^0,w,c
+   897  00006A  E102               	bnz	l218
+   898  00006C                     u270:
+   899                           
+   900                           ;mcc_generated_files/pic18f_uart.c: 103:                 {;mcc_generated_files/pic18f_ua
+      +                          rt.c: 104:                     msg_length += frame.data_length;
+   901  00006C  5003               	movf	(_frame+1)^0,w,c
+   902  00006E  2659               	addwf	Run_Bootloader@msg_length^0,f,c
+   903  000070                     l218:
+   904                           
+   905                           ;mcc_generated_files/pic18f_uart.c: 94:         while (index < msg_length)
+   906  000070  5059               	movf	Run_Bootloader@msg_length^0,w,c
+   907  000072  5C5A               	subwf	Run_Bootloader@index^0,w,c	;volatile
+   908  000074  E3E8               	bnc	l1348
+   909                           
+   910                           ;mcc_generated_files/pic18f_uart.c: 109:         msg_length = ProcessBootBuffer ();
+   911  000076  ECCA  F000         	call	_ProcessBootBuffer	;wreg free
+   912  00007A  6E59               	movwf	Run_Bootloader@msg_length^0,c
+   913                           
+   914                           ;mcc_generated_files/pic18f_uart.c: 114:         EUSART1_Write(0x55);
+   915  00007C  0E55               	movlw	85
+   916  00007E  EC29  F002         	call	_EUSART1_Write
+   917                           
+   918                           ;mcc_generated_files/pic18f_uart.c: 115:         index = 0;
+   919  000082  6A5A               	clrf	Run_Bootloader@index^0,c	;volatile
+   920                           
+   921                           ;mcc_generated_files/pic18f_uart.c: 116:         while (index < msg_length)
+   922  000084  D005               	goto	l1374
+   923  000086                     l1370:
+   924                           
+   925                           ;mcc_generated_files/pic18f_uart.c: 117:         {;mcc_generated_files/pic18f_uart.c: 11
+      +                          8:             EUSART1_Write (frame.buffer [index++]);
+   926  000086  D808               	call	PL16	;call to abstracted procedure
+   927  000088  50DF               	movf	indf2,w,c
+   928  00008A  EC29  F002         	call	_EUSART1_Write
+   929  00008E  2A5A               	incf	Run_Bootloader@index^0,f,c	;volatile
+   930  000090                     l1374:
+   931                           
+   932                           ;mcc_generated_files/pic18f_uart.c: 116:         while (index < msg_length)
+   933  000090  5059               	movf	Run_Bootloader@msg_length^0,w,c
+   934  000092  5C5A               	subwf	Run_Bootloader@index^0,w,c	;volatile
+   935  000094  E2C5               	bc	_Run_Bootloader
+   936  000096  D7F7               	goto	l1370
+   937  000098                     __end_of_Run_Bootloader:
+   938                           	opt callstack 0
+   939  000098                     PL16:
+   940                           	opt callstack 25
+   941  000098  505A               	movf	Run_Bootloader@index^0,w,c
+   942  00009A  0F02               	addlw	low _frame
+   943  00009C  6ED9               	movwf	fsr2l,c
+   944  00009E  6ADA               	clrf	fsr2h,c
+   945  0000A0  0012               	return	
+   946  0000A2                     __end_ofPL16:
+   947                           	opt callstack 0
+   948                           
+   949 ;; *************** function _ProcessBootBuffer *****************
+   950 ;; Defined at:
+   951 ;;		line 178 in file "mcc_generated_files/pic18f_bootload.c"
+   952 ;; Parameters:    Size  Location     Type
+   953 ;;		None
+   954 ;; Auto vars:     Size  Location     Type
+   955 ;;  len             1    8[COMRAM] unsigned char 
+   956 ;; Return value:  Size  Location     Type
+   957 ;;                  1    wreg      unsigned char 
+   958 ;; Registers used:
+   959 ;;		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+   960 ;; Tracked objects:
+   961 ;;		On entry : 0/F
+   962 ;;		On exit  : 0/0
+   963 ;;		Unchanged: 0/0
+   964 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   965 ;;      Params:         0       0       0       0       0       0       0
+   966 ;;      Locals:         1       0       0       0       0       0       0
+   967 ;;      Temps:          2       0       0       0       0       0       0
+   968 ;;      Totals:         3       0       0       0       0       0       0
+   969 ;;Total ram usage:        3 bytes
+   970 ;; Hardware stack levels used:    1
+   971 ;; Hardware stack levels required when called:    2
+   972 ;; This function calls:
+   973 ;;		_Calc_Checksum
+   974 ;;		_Erase_Flash
+   975 ;;		_Get_Version_Data
+   976 ;;		_Read_Config
+   977 ;;		_Write_Config
+   978 ;;		_Write_Flash
+   979 ;; This function is called by:
+   980 ;;		_Run_Bootloader
+   981 ;; This function uses a non-reentrant model
+   982 ;;
+   983                           
+   984                           	psect	text10
+   985  000194                     __ptext10:
+   986                           	opt callstack 0
+   987  000194                     _ProcessBootBuffer:
+   988                           	opt callstack 25
+   989                           
+   990                           ;mcc_generated_files/pic18f_bootload.c: 180:     uint8_t len;;mcc_generated_files/pic18f
+      +                          _bootload.c: 181:     EE_Key_1 = frame.EE_key_1;
+   991                           
+   992                           ;incstack = 0
+   993  000194  C005  F000         	movff	_frame+3,0
+   994                           
+   995                           ;mcc_generated_files/pic18f_bootload.c: 182:     EE_Key_2 = frame.EE_key_2;
+   996  000198  C006  F001         	movff	_frame+4,1
+   997                           
+   998                           ;mcc_generated_files/pic18f_bootload.c: 185:     switch (frame.command)
+   999  00019C  D01A               	goto	l1286
+  1000  00019E                     l1270:
+  1001                           
+  1002                           ;mcc_generated_files/pic18f_bootload.c: 188:         len = Get_Version_Data();
+  1003  00019E  EC2F  F001         	call	_Get_Version_Data	;wreg free
+  1004  0001A2  D015               	goto	L8
+  1005  0001A4                     l1272:
+  1006                           
+  1007                           ;mcc_generated_files/pic18f_bootload.c: 191:         len = Write_Flash();
+  1008  0001A4  EC51  F000         	call	_Write_Flash	;wreg free
+  1009  0001A8  D012               	goto	L8
+  1010  0001AA                     l1274:
+  1011                           
+  1012                           ;mcc_generated_files/pic18f_bootload.c: 194:         len = Erase_Flash();
+  1013  0001AA  EC8F  F000         	call	_Erase_Flash	;wreg free
+  1014  0001AE  D00F               	goto	L8
+  1015  0001B0                     l1276:
+  1016                           
+  1017                           ;mcc_generated_files/pic18f_bootload.c: 197:         len = Read_Config();
+  1018  0001B0  EC58  F001         	call	_Read_Config	;wreg free
+  1019  0001B4  D00C               	goto	L8
+  1020  0001B6                     l1278:
+  1021                           
+  1022                           ;mcc_generated_files/pic18f_bootload.c: 200:         len = Write_Config();
+  1023  0001B6  ECFF  F000         	call	_Write_Config	;wreg free
+  1024  0001BA  D009               	goto	L8
+  1025  0001BC                     l1280:
+  1026                           
+  1027                           ;mcc_generated_files/pic18f_bootload.c: 203:         len = Calc_Checksum();
+  1028  0001BC  EC7E  F001         	call	_Calc_Checksum	;wreg free
+  1029  0001C0  D006               	goto	L8
+  1030  0001C2                     l1282:
+  1031                           
+  1032                           ;mcc_generated_files/pic18f_bootload.c: 206:         reset_pending = 1;
+  1033  0001C2  0E01               	movlw	1
+  1034  0001C4  6E4E               	movwf	_reset_pending^0,c
+  1035                           
+  1036                           ;mcc_generated_files/pic18f_bootload.c: 207:         len = 9;
+  1037  0001C6  0E09               	movlw	9
+  1038  0001C8  D002               	goto	L8
+  1039  0001CA                     l76:
+  1040                           
+  1041                           ;mcc_generated_files/pic18f_bootload.c: 210:         frame.data[0] = 0xFF;
+  1042  0001CA  680B               	setf	(_frame+9)^0,c
+  1043                           
+  1044                           ;mcc_generated_files/pic18f_bootload.c: 211:         len = 10;
+  1045  0001CC  0E0A               	movlw	10
+  1046  0001CE                     L8:
+  1047  0001CE  6E57               	movwf	ProcessBootBuffer@len^0,c
+  1048                           
+  1049                           ;mcc_generated_files/pic18f_bootload.c: 212:     }
+  1050  0001D0  D014               	goto	l1288
+  1051  0001D2                     l1286:
+  1052  0001D2  5002               	movf	_frame^0,w,c
+  1053  0001D4  6E55               	movwf	??_ProcessBootBuffer^0,c
+  1054  0001D6  6A56               	clrf	(??_ProcessBootBuffer+1)^0,c
+  1055                           
+  1056                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+      +                          itches
+  1057                           ; Switch size 1, requested type "space"
+  1058                           ; Number of cases is 1, Range of values is 0 to 0
+  1059                           ; switch strategies available:
+  1060                           ; Name         Instructions Cycles
+  1061                           ; simple_byte            4     3 (average)
+  1062                           ;	Chosen strategy is simple_byte
+  1063  0001D8  5056               	movf	(??_ProcessBootBuffer+1)^0,w,c
+  1064  0001DA  E1F7               	bnz	l76
+  1065                           
+  1066                           ; Switch size 1, requested type "space"
+  1067                           ; Number of cases is 7, Range of values is 0 to 9
+  1068                           ; switch strategies available:
+  1069                           ; Name         Instructions Cycles
+  1070                           ; simple_byte           22    12 (average)
+  1071                           ;	Chosen strategy is simple_byte
+  1072  0001DC  5055               	movf	??_ProcessBootBuffer^0,w,c
+  1073  0001DE  E0DF               	bz	l1270
+  1074  0001E0  0A02               	xorlw	2	; case 2
+  1075  0001E2  E0E0               	bz	l1272
+  1076  0001E4  0A01               	xorlw	1	; case 3
+  1077  0001E6  E0E1               	bz	l1274
+  1078  0001E8  0A05               	xorlw	5	; case 6
+  1079  0001EA  E0E2               	bz	l1276
+  1080  0001EC  0A01               	xorlw	1	; case 7
+  1081  0001EE  E0E3               	bz	l1278
+  1082  0001F0  0A0F               	xorlw	15	; case 8
+  1083  0001F2  E0E4               	bz	l1280
+  1084  0001F4  0A01               	xorlw	1	; case 9
+  1085  0001F6  E0E5               	bz	l1282
+  1086  0001F8  D7E8               	goto	l76
+  1087  0001FA                     l1288:
+  1088                           
+  1089                           ;mcc_generated_files/pic18f_bootload.c: 213:     return (len);
+  1090  0001FA  5057               	movf	ProcessBootBuffer@len^0,w,c
+  1091  0001FC  0012               	return		;funcret
+  1092  0001FE                     __end_of_ProcessBootBuffer:
+  1093                           	opt callstack 0
+  1094                           
+  1095 ;; *************** function _Write_Flash *****************
+  1096 ;; Defined at:
+  1097 ;;		line 266 in file "mcc_generated_files/pic18f_bootload.c"
+  1098 ;; Parameters:    Size  Location     Type
+  1099 ;;		None
+  1100 ;; Auto vars:     Size  Location     Type
+  1101 ;;  i               2    4[COMRAM] unsigned short 
+  1102 ;; Return value:  Size  Location     Type
+  1103 ;;                  1    wreg      unsigned char 
+  1104 ;; Registers used:
+  1105 ;;		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+  1106 ;; Tracked objects:
+  1107 ;;		On entry : 0/F
+  1108 ;;		On exit  : 0/0
+  1109 ;;		Unchanged: 0/0
+  1110 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+  1111 ;;      Params:         0       0       0       0       0       0       0
+  1112 ;;      Locals:         2       0       0       0       0       0       0
+  1113 ;;      Temps:          4       0       0       0       0       0       0
+  1114 ;;      Totals:         6       0       0       0       0       0       0
+  1115 ;;Total ram usage:        6 bytes
+  1116 ;; Hardware stack levels used:    1
+  1117 ;; Hardware stack levels required when called:    1
+  1118 ;; This function calls:
+  1119 ;;		_StartWrite
+  1120 ;; This function is called by:
+  1121 ;;		_ProcessBootBuffer
+  1122 ;; This function uses a non-reentrant model
+  1123 ;;
+  1124                           
+  1125                           	psect	text11
+  1126  0000A2                     __ptext11:
+  1127                           	opt callstack 0
+  1128  0000A2                     _Write_Flash:
+  1129                           	opt callstack 0
+  1130                           
+  1131                           ;mcc_generated_files/pic18f_bootload.c: 268:     TBLPTRL = frame.address_L;
+  1132                           
+  1133                           ;incstack = 0
+  1134                           
+  1135                           ;mcc_generated_files/pic18f_bootload.c: 269:     TBLPTRH = frame.address_H;
+  1136                           
+  1137                           ;mcc_generated_files/pic18f_bootload.c: 270:     TBLPTRU = frame.address_U;
+  1138  0000A2  ECBB  F000         	call	PL2	;call to abstracted procedure
+  1139                           
+  1140                           ;mcc_generated_files/pic18f_bootload.c: 271:  EECON1 = 0xA4;
+  1141  0000A6  0EA4               	movlw	164
+  1142  0000A8  6EA6               	movwf	166,c	;volsfr
+  1143                           
+  1144                           ;mcc_generated_files/pic18f_bootload.c: 272:     if (TBLPTR < 0x500)
+  1145  0000AA  50F8               	movf	248,w,c	;volatile
+  1146  0000AC  E105               	bnz	l85
+  1147  0000AE  EC73  F001         	call	PL4	;call to abstracted procedure
+  1148  0000B2  E202               	bc	l85
+  1149  0000B4                     u30:
+  1150  0000B4                     l1134:
+  1151                           
+  1152                           ;mcc_generated_files/pic18f_bootload.c: 273:     {;mcc_generated_files/pic18f_bootload.c
+      +                          : 274:         frame.data[0] = 0xFE;
+  1153                           
+  1154                           ;mcc_generated_files/pic18f_bootload.c: 275:         return (10);
+  1155  0000B4  EFC2  F000         	goto	__end_ofPL2	;call to abstracted procedure
+  1156  0000B8                     l85:
+  1157                           
+  1158                           ;mcc_generated_files/pic18f_bootload.c: 277:     for (uint16_t i = 0; i < frame.data_len
+      +                          gth; i ++)
+  1159  0000B8  6A53               	clrf	Write_Flash@i^0,c
+  1160  0000BA  6A54               	clrf	(Write_Flash@i+1)^0,c
+  1161  0000BC  D029               	goto	l1158
+  1162  0000BE                     l1140:
+  1163                           
+  1164                           ;mcc_generated_files/pic18f_bootload.c: 278:     {;mcc_generated_files/pic18f_bootload.c
+      +                          : 279:         TABLAT = frame.data[i];
+  1165  0000BE  5053               	movf	Write_Flash@i^0,w,c
+  1166  0000C0  EC24  F001         	call	PL6	;call to abstracted procedure
+  1167                           
+  1168                           ;mcc_generated_files/pic18f_bootload.c: 280:         if (TBLPTR >= 0x8000)
+  1169  0000C4  50F8               	movf	248,w,c	;volatile
+  1170  0000C6  E002 EFC2  F000    	bnz	__end_ofPL2
+  1171  0000CC  ECC5  F000         	call	PL14	;call to abstracted procedure
+  1172  0000D0  E302 EFC2  F000    	bc	__end_ofPL2
+  1173                           
+  1174                           ;mcc_generated_files/pic18f_bootload.c: 284:         }
+  1175  0000D6  000D               	tblwt		*+	;# 
+  1176                           
+  1177                           ;mcc_generated_files/pic18f_bootload.c: 286:         if (((TBLPTRL & (64 - 1)) == (64 - 
+      +                          1))
+  1178  0000D8  50F6               	movf	246,w,c	;volatile
+  1179  0000DA  0B3F               	andlw	63
+  1180  0000DC  0A3F               	xorlw	63
+  1181  0000DE  E012               	bz	u60
+  1182  0000E0  684F               	setf	??_Write_Flash^0,c
+  1183  0000E2  6850               	setf	(??_Write_Flash+1)^0,c
+  1184  0000E4  EE20  F003         	lfsr	2,_frame+1
+  1185  0000E8  CFDE F051          	movff	postinc2,??_Write_Flash+2
+  1186  0000EC  CFDD F052          	movff	postdec2,??_Write_Flash+3
+  1187  0000F0  504F               	movf	??_Write_Flash^0,w,c
+  1188  0000F2  2651               	addwf	(??_Write_Flash+2)^0,f,c
+  1189  0000F4  5050               	movf	(??_Write_Flash+1)^0,w,c
+  1190  0000F6  2252               	addwfc	(??_Write_Flash+3)^0,f,c
+  1191  0000F8  5053               	movf	Write_Flash@i^0,w,c
+  1192  0000FA  1851               	xorwf	(??_Write_Flash+2)^0,w,c
+  1193  0000FC  E107               	bnz	l1156
+  1194  0000FE  5054               	movf	(Write_Flash@i+1)^0,w,c
+  1195  000100  1852               	xorwf	(??_Write_Flash+3)^0,w,c
+  1196  000102  E104               	bnz	l1156
+  1197  000104                     u60:
+  1198  000104  000A               	tblrd		*-	;# 
+  1199                           
+  1200                           ;mcc_generated_files/pic18f_bootload.c: 290:             StartWrite();
+  1201  000106  EC1B  F002         	call	_StartWrite	;wreg free
+  1202  00010A  0009               	tblrd		*+	;# 
+  1203  00010C                     l1156:
+  1204                           
+  1205                           ;mcc_generated_files/pic18f_bootload.c: 293:     }
+  1206  00010C  4A53               	infsnz	Write_Flash@i^0,f,c
+  1207  00010E  2A54               	incf	(Write_Flash@i+1)^0,f,c
+  1208  000110                     l1158:
+  1209  000110  5003               	movf	(_frame+1)^0,w,c
+  1210  000112  5C53               	subwf	Write_Flash@i^0,w,c
+  1211  000114  5004               	movf	(_frame+2)^0,w,c
+  1212  000116  5854               	subwfb	(Write_Flash@i+1)^0,w,c
+  1213  000118  E3D2               	bnc	l1140
+  1214                           
+  1215                           ;mcc_generated_files/pic18f_bootload.c: 294:     frame.data[0] = 0x01;
+  1216                           
+  1217                           ;mcc_generated_files/pic18f_bootload.c: 295:     EE_Key_1 = 0x00;
+  1218                           
+  1219                           ;mcc_generated_files/pic18f_bootload.c: 296:     EE_Key_2 = 0x00;
+  1220  00011A  EF2A  F001         	goto	__end_ofPL6	;call to abstracted procedure
+  1221  00011E                     __end_of_Write_Flash:
+  1222                           	opt callstack 0
+  1223                           
+  1224 ;; *************** function _Write_Config *****************
+  1225 ;; Defined at:
+  1226 ;;		line 366 in file "mcc_generated_files/pic18f_bootload.c"
+  1227 ;; Parameters:    Size  Location     Type
+  1228 ;;		None
+  1229 ;; Auto vars:     Size  Location     Type
+  1230 ;;  i               1    2[COMRAM] unsigned char 
+  1231 ;; Return value:  Size  Location     Type
+  1232 ;;                  1    wreg      unsigned char 
+  1233 ;; Registers used:
+  1234 ;;		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+  1235 ;; Tracked objects:
+  1236 ;;		On entry : 0/F
+  1237 ;;		On exit  : 0/0
+  1238 ;;		Unchanged: 0/0
+  1239 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+  1240 ;;      Params:         0       0       0       0       0       0       0
+  1241 ;;      Locals:         1       0       0       0       0       0       0
+  1242 ;;      Temps:          2       0       0       0       0       0       0
+  1243 ;;      Totals:         3       0       0       0       0       0       0
+  1244 ;;Total ram usage:        3 bytes
+  1245 ;; Hardware stack levels used:    1
+  1246 ;; Hardware stack levels required when called:    1
+  1247 ;; This function calls:
+  1248 ;;		_StartWrite
+  1249 ;; This function is called by:
+  1250 ;;		_ProcessBootBuffer
+  1251 ;; This function uses a non-reentrant model
+  1252 ;;
+  1253                           
+  1254                           	psect	text12
+  1255  0001FE                     __ptext12:
+  1256                           	opt callstack 0
+  1257  0001FE                     _Write_Config:
+  1258                           	opt callstack 0
+  1259                           
+  1260                           ;mcc_generated_files/pic18f_bootload.c: 368:     TBLPTRL = frame.address_L;
+  1261                           
+  1262                           ;incstack = 0
+  1263                           
+  1264                           ;mcc_generated_files/pic18f_bootload.c: 369:     TBLPTRH = frame.address_H;
+  1265                           
+  1266                           ;mcc_generated_files/pic18f_bootload.c: 370:     TBLPTRU = frame.address_U;
+  1267  0001FE  ECBB  F000         	call	PL2	;call to abstracted procedure
+  1268                           
+  1269                           ;mcc_generated_files/pic18f_bootload.c: 371:     if (TBLPTR < 0x500)
+  1270  000202  50F8               	movf	248,w,c	;volatile
+  1271  000204  E105               	bnz	l1240
+  1272  000206  EC73  F001         	call	PL4	;call to abstracted procedure
+  1273  00020A  E202               	bc	l1240
+  1274                           
+  1275                           ;mcc_generated_files/pic18f_bootload.c: 372:     {;mcc_generated_files/pic18f_bootload.c
+      +                          : 373:         frame.data[0] = 0xFE;
+  1276                           
+  1277                           ;mcc_generated_files/pic18f_bootload.c: 374:         return (10);
+  1278  00020C  EFC2  F000         	goto	__end_ofPL2	;call to abstracted procedure
+  1279  000210                     l1240:
+  1280                           
+  1281                           ;mcc_generated_files/pic18f_bootload.c: 376:     if (TBLPTR > 0x20000F)
+  1282  000210  0E10               	movlw	16
+  1283  000212  5CF6               	subwf	246,w,c	;volatile
+  1284  000214  0E00               	movlw	0
+  1285  000216  58F7               	subwfb	247,w,c	;volatile
+  1286  000218  0E20               	movlw	32
+  1287  00021A  58F8               	subwfb	248,w,c	;volatile
+  1288                           
+  1289                           ;mcc_generated_files/pic18f_bootload.c: 377:         EECON1 = 0xC4;
+  1290  00021C  0EC4               	movlw	196
+  1291  00021E  A0D8               	btfss	status,0,c
+  1292                           
+  1293                           ;mcc_generated_files/pic18f_bootload.c: 379:         EECON1 = 0x84;
+  1294  000220  0E84               	movlw	132
+  1295  000222  6EA6               	movwf	166,c	;volsfr
+  1296                           
+  1297                           ;mcc_generated_files/pic18f_bootload.c: 380:     for (uint8_t i= 0; i < frame.data_lengt
+      +                          h; i ++)
+  1298  000224  6A51               	clrf	Write_Config@i^0,c
+  1299  000226  D007               	goto	l1256
+  1300  000228                     l1248:
+  1301                           
+  1302                           ;mcc_generated_files/pic18f_bootload.c: 381:     {;mcc_generated_files/pic18f_bootload.c
+      +                          : 382:         TABLAT = frame.data[i];
+  1303  000228  5051               	movf	Write_Config@i^0,w,c
+  1304  00022A  D80E               	call	PL6	;call to abstracted procedure
+  1305  00022C  000C               	tblwt		*	;# 
+  1306                           
+  1307                           ;mcc_generated_files/pic18f_bootload.c: 384:         StartWrite();
+  1308  00022E  EC1B  F002         	call	_StartWrite	;wreg free
+  1309                           
+  1310                           ;mcc_generated_files/pic18f_bootload.c: 385:         ++ TBLPTRL;
+  1311  000232  2AF6               	incf	246,f,c	;volatile
+  1312                           
+  1313                           ;mcc_generated_files/pic18f_bootload.c: 386:     }
+  1314  000234  2A51               	incf	Write_Config@i^0,f,c
+  1315  000236                     l1256:
+  1316  000236  5051               	movf	Write_Config@i^0,w,c
+  1317  000238  6E4F               	movwf	??_Write_Config^0,c
+  1318  00023A  6A50               	clrf	(??_Write_Config+1)^0,c
+  1319  00023C  5003               	movf	(_frame+1)^0,w,c
+  1320  00023E  5C4F               	subwf	??_Write_Config^0,w,c
+  1321  000240  5004               	movf	(_frame+2)^0,w,c
+  1322  000242  5850               	subwfb	(??_Write_Config+1)^0,w,c
+  1323  000244  E3F1               	bnc	l1248
+  1324                           
+  1325                           ;mcc_generated_files/pic18f_bootload.c: 387:     frame.data[0] = 0x01;
+  1326                           
+  1327                           ;mcc_generated_files/pic18f_bootload.c: 388:     EE_Key_1 = 0x00;
+  1328                           
+  1329                           ;mcc_generated_files/pic18f_bootload.c: 389:     EE_Key_2 = 0x00;
+  1330  000246  D006               	goto	PL10	;call to abstracted procedure
+  1331  000248                     __end_of_Write_Config:
+  1332                           	opt callstack 0
+  1333  000248                     PL6:
+  1334                           	opt callstack 25
+  1335  000248  0F0B               	addlw	low (_frame+9)
+  1336  00024A  6ED9               	movwf	fsr2l,c
+  1337  00024C  6ADA               	clrf	fsr2h,c
+  1338  00024E  50DF               	movf	indf2,w,c
+  1339  000250  6EF5               	movwf	245,c	;volatile
+  1340  000252  0012               	return	
+  1341  000254                     __end_ofPL6:
+  1342                           	opt callstack 0
+  1343  000254                     PL10:
+  1344                           	opt callstack 25
+  1345  000254  0E01               	movlw	1
+  1346  000256  6E0B               	movwf	(_frame+9)^0,c
+  1347  000258  6A00               	clrf	0,c
+  1348  00025A  6A01               	clrf	1,c
+  1349  00025C  0C0A               	retlw	10
+  1350  00025E                     __end_ofPL10:
+  1351                           	opt callstack 0
+  1352                           
+  1353 ;; *************** function _Read_Config *****************
+  1354 ;; Defined at:
+  1355 ;;		line 341 in file "mcc_generated_files/pic18f_bootload.c"
+  1356 ;; Parameters:    Size  Location     Type
+  1357 ;;		None
+  1358 ;; Auto vars:     Size  Location     Type
+  1359 ;;  i               1    2[COMRAM] unsigned char 
+  1360 ;; Return value:  Size  Location     Type
+  1361 ;;                  1    wreg      unsigned char 
+  1362 ;; Registers used:
+  1363 ;;		wreg, fsr2l, fsr2h, status,2, status,0
+  1364 ;; Tracked objects:
+  1365 ;;		On entry : 0/F
+  1366 ;;		On exit  : 0/0
+  1367 ;;		Unchanged: 0/0
+  1368 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+  1369 ;;      Params:         0       0       0       0       0       0       0
+  1370 ;;      Locals:         1       0       0       0       0       0       0
+  1371 ;;      Temps:          2       0       0       0       0       0       0
+  1372 ;;      Totals:         3       0       0       0       0       0       0
+  1373 ;;Total ram usage:        3 bytes
+  1374 ;; Hardware stack levels used:    1
+  1375 ;; This function calls:
+  1376 ;;		Nothing
+  1377 ;; This function is called by:
+  1378 ;;		_ProcessBootBuffer
+  1379 ;; This function uses a non-reentrant model
+  1380 ;;
+  1381                           
+  1382                           	psect	text13
+  1383  0002B0                     __ptext13:
+  1384                           	opt callstack 0
+  1385  0002B0                     _Read_Config:
+  1386                           	opt callstack 0
+  1387                           
+  1388                           ;mcc_generated_files/pic18f_bootload.c: 343:     TBLPTRL = frame.address_L;
+  1389                           
+  1390                           ;incstack = 0
+  1391                           
+  1392                           ;mcc_generated_files/pic18f_bootload.c: 344:     TBLPTRH = frame.address_H;
+  1393                           
+  1394                           ;mcc_generated_files/pic18f_bootload.c: 345:     TBLPTRU = frame.address_U;
+  1395  0002B0  ECBB  F000         	call	PL2	;call to abstracted procedure
+  1396                           
+  1397                           ;mcc_generated_files/pic18f_bootload.c: 346:  EECON1 = 0xC0;
+  1398  0002B4  0EC0               	movlw	192
+  1399  0002B6  6EA6               	movwf	166,c	;volsfr
+  1400                           
+  1401                           ;mcc_generated_files/pic18f_bootload.c: 347:     if (TBLPTR < 0x500)
+  1402  0002B8  50F8               	movf	248,w,c	;volatile
+  1403  0002BA  E104               	bnz	l104
+  1404  0002BC  D814               	call	PL4	;call to abstracted procedure
+  1405  0002BE  E202               	bc	l104
+  1406                           
+  1407                           ;mcc_generated_files/pic18f_bootload.c: 348:     {;mcc_generated_files/pic18f_bootload.c
+      +                          : 349:         frame.data[0] = 0xFE;
+  1408                           
+  1409                           ;mcc_generated_files/pic18f_bootload.c: 350:         return (10);
+  1410  0002C0  EFC2  F000         	goto	__end_ofPL2	;call to abstracted procedure
+  1411  0002C4                     l104:
+  1412                           
+  1413                           ;mcc_generated_files/pic18f_bootload.c: 352:     for (uint8_t i = 0; i < frame.data_leng
+      +                          th; i++)
+  1414  0002C4  6A51               	clrf	Read_Config@i^0,c
+  1415  0002C6  D004               	goto	l1224
+  1416  0002C8                     l107:
+  1417  0002C8  0009               	tblrd		*+	;# 
+  1418                           
+  1419                           ;mcc_generated_files/pic18f_bootload.c: 355:         frame.data[i] = TABLAT;
+  1420  0002CA  5051               	movf	Read_Config@i^0,w,c
+  1421  0002CC  D811               	call	PL8	;call to abstracted procedure
+  1422                           
+  1423                           ;mcc_generated_files/pic18f_bootload.c: 356:     }
+  1424  0002CE  2A51               	incf	Read_Config@i^0,f,c
+  1425  0002D0                     l1224:
+  1426  0002D0  5051               	movf	Read_Config@i^0,w,c
+  1427  0002D2  6E4F               	movwf	??_Read_Config^0,c
+  1428  0002D4  6A50               	clrf	(??_Read_Config+1)^0,c
+  1429  0002D6  5003               	movf	(_frame+1)^0,w,c
+  1430  0002D8  5C4F               	subwf	??_Read_Config^0,w,c
+  1431  0002DA  5004               	movf	(_frame+2)^0,w,c
+  1432  0002DC  5850               	subwfb	(??_Read_Config+1)^0,w,c
+  1433  0002DE  E3F4               	bnc	l107
+  1434                           
+  1435                           ;mcc_generated_files/pic18f_bootload.c: 357:     return (9 + frame.data_length);
+  1436  0002E0  5003               	movf	(_frame+1)^0,w,c
+  1437  0002E2  0F09               	addlw	9
+  1438  0002E4  0012               	return		;funcret
+  1439  0002E6                     __end_of_Read_Config:
+  1440                           	opt callstack 0
+  1441  0002E6                     PL4:
+  1442                           	opt callstack 25
+  1443  0002E6  0E00               	movlw	0
+  1444  0002E8  5CF6               	subwf	246,w,c	;volatile
+  1445  0002EA  0E05               	movlw	5
+  1446  0002EC  58F7               	subwfb	247,w,c	;volatile
+  1447  0002EE  0012               	return	
+  1448  0002F0                     __end_ofPL4:
+  1449                           	opt callstack 0
+  1450  0002F0                     PL8:
+  1451                           	opt callstack 26
+  1452  0002F0  0F0B               	addlw	low (_frame+9)
+  1453  0002F2  6ED9               	movwf	fsr2l,c
+  1454  0002F4  6ADA               	clrf	fsr2h,c
+  1455  0002F6  CFF5 FFDF          	movff	tablat,indf2	;volatile
+  1456  0002FA  0012               	return	
+  1457  0002FC                     __end_ofPL8:
+  1458                           	opt callstack 0
+  1459                           
+  1460 ;; *************** function _Get_Version_Data *****************
+  1461 ;; Defined at:
+  1462 ;;		line 223 in file "mcc_generated_files/pic18f_bootload.c"
+  1463 ;; Parameters:    Size  Location     Type
+  1464 ;;		None
+  1465 ;; Auto vars:     Size  Location     Type
+  1466 ;;  i               1    0[COMRAM] unsigned char 
+  1467 ;; Return value:  Size  Location     Type
+  1468 ;;                  1    wreg      unsigned char 
+  1469 ;; Registers used:
+  1470 ;;		wreg, fsr2l, fsr2h, status,2, status,0
+  1471 ;; Tracked objects:
+  1472 ;;		On entry : 0/F
+  1473 ;;		On exit  : 0/0
+  1474 ;;		Unchanged: 0/0
+  1475 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+  1476 ;;      Params:         0       0       0       0       0       0       0
+  1477 ;;      Locals:         1       0       0       0       0       0       0
+  1478 ;;      Temps:          0       0       0       0       0       0       0
+  1479 ;;      Totals:         1       0       0       0       0       0       0
+  1480 ;;Total ram usage:        1 bytes
+  1481 ;; Hardware stack levels used:    1
+  1482 ;; This function calls:
+  1483 ;;		Nothing
+  1484 ;; This function is called by:
+  1485 ;;		_ProcessBootBuffer
+  1486 ;; This function uses a non-reentrant model
+  1487 ;;
+  1488                           
+  1489                           	psect	text14
+  1490  00025E                     __ptext14:
+  1491                           	opt callstack 0
+  1492  00025E                     _Get_Version_Data:
+  1493                           	opt callstack 26
+  1494                           
+  1495                           ;mcc_generated_files/pic18f_bootload.c: 225:     frame.data[0] = 0x00;
+  1496                           
+  1497                           ;incstack = 0
+  1498  00025E  6A0B               	clrf	(_frame+9)^0,c
+  1499                           
+  1500                           ;mcc_generated_files/pic18f_bootload.c: 226:     frame.data[1] = 0x01;
+  1501  000260  0E01               	movlw	1
+  1502  000262  6E0C               	movwf	(_frame+10)^0,c
+  1503                           
+  1504                           ;mcc_generated_files/pic18f_bootload.c: 227:     frame.data[2] = 0;
+  1505  000264  6A0D               	clrf	(_frame+11)^0,c
+  1506                           
+  1507                           ;mcc_generated_files/pic18f_bootload.c: 228:     frame.data[3] = 1;
+  1508  000266  0E01               	movlw	1
+  1509  000268  6E0E               	movwf	(_frame+12)^0,c
+  1510                           
+  1511                           ;mcc_generated_files/pic18f_bootload.c: 229:     frame.data[4] = 0;
+  1512  00026A  6A0F               	clrf	(_frame+13)^0,c
+  1513                           
+  1514                           ;mcc_generated_files/pic18f_bootload.c: 230:     frame.data[5] = 0;
+  1515  00026C  6A10               	clrf	(_frame+14)^0,c
+  1516                           
+  1517                           ;mcc_generated_files/pic18f_bootload.c: 231:     TBLPTRU = 0x3F;
+  1518  00026E  0E3F               	movlw	63
+  1519  000270  6EF8               	movwf	248,c	;volatile
+  1520                           
+  1521                           ;mcc_generated_files/pic18f_bootload.c: 232:     TBLPTRH = 0xFF;
+  1522  000272  68F7               	setf	247,c	;volatile
+  1523                           
+  1524                           ;mcc_generated_files/pic18f_bootload.c: 233:     TBLPTRL = 0xFE;
+  1525  000274  0EFE               	movlw	254
+  1526  000276  6EF6               	movwf	246,c	;volatile
+  1527                           
+  1528                           ;mcc_generated_files/pic18f_bootload.c: 234:     EECON1 = 0xC0;
+  1529  000278  0EC0               	movlw	192
+  1530  00027A  6EA6               	movwf	166,c	;volsfr
+  1531  00027C  0009               	tblrd		*+	;# 
+  1532                           
+  1533                           ;mcc_generated_files/pic18f_bootload.c: 236:     frame.data[6] = TABLAT;
+  1534  00027E  CFF5 F011          	movff	tablat,_frame+15	;volatile
+  1535  000282  0009               	tblrd		*+	;# 
+  1536                           
+  1537                           ;mcc_generated_files/pic18f_bootload.c: 238:     frame.data[7] = TABLAT;
+  1538  000284  CFF5 F012          	movff	tablat,_frame+16	;volatile
+  1539                           
+  1540                           ;mcc_generated_files/pic18f_bootload.c: 239:     frame.data[8] = 0;
+  1541  000288  6A13               	clrf	(_frame+17)^0,c
+  1542                           
+  1543                           ;mcc_generated_files/pic18f_bootload.c: 240:     frame.data[9] = 0;
+  1544  00028A  6A14               	clrf	(_frame+18)^0,c
+  1545                           
+  1546                           ;mcc_generated_files/pic18f_bootload.c: 242:     frame.data[10] = 64;
+  1547  00028C  0E40               	movlw	64
+  1548  00028E  6E15               	movwf	(_frame+19)^0,c
+  1549                           
+  1550                           ;mcc_generated_files/pic18f_bootload.c: 243:     frame.data[11] = 64;
+  1551  000290  6E16               	movwf	(_frame+20)^0,c
+  1552                           
+  1553                           ;mcc_generated_files/pic18f_bootload.c: 245:     TBLPTRU = 0x30;
+  1554  000292  0E30               	movlw	48
+  1555  000294  6EF8               	movwf	248,c	;volatile
+  1556                           
+  1557                           ;mcc_generated_files/pic18f_bootload.c: 246:     TBLPTRH = 0x00;
+  1558  000296  6AF7               	clrf	247,c	;volatile
+  1559                           
+  1560                           ;mcc_generated_files/pic18f_bootload.c: 247:     TBLPTRL = 0x00;
+  1561  000298  6AF6               	clrf	246,c	;volatile
+  1562                           
+  1563                           ;mcc_generated_files/pic18f_bootload.c: 249:     for (uint8_t i= 12; i < 16; i++)
+  1564  00029A  0E0C               	movlw	12
+  1565  00029C  6E4F               	movwf	Get_Version_Data@i^0,c
+  1566  00029E                     l80:
+  1567  00029E  0009               	tblrd		*+	;# 
+  1568                           
+  1569                           ;mcc_generated_files/pic18f_bootload.c: 252:         frame.data[i] = TABLAT;
+  1570  0002A0  504F               	movf	Get_Version_Data@i^0,w,c
+  1571  0002A2  EC78  F001         	call	PL8	;call to abstracted procedure
+  1572                           
+  1573                           ;mcc_generated_files/pic18f_bootload.c: 253:     }
+  1574  0002A6  2A4F               	incf	Get_Version_Data@i^0,f,c
+  1575  0002A8  0E0F               	movlw	15
+  1576  0002AA  644F               	cpfsgt	Get_Version_Data@i^0,c
+  1577  0002AC  D7F8               	goto	l80
+  1578  0002AE  0C19               	retlw	25
+  1579  0002B0                     __end_of_Get_Version_Data:
+  1580                           	opt callstack 0
+  1581                           
+  1582 ;; *************** function _Erase_Flash *****************
+  1583 ;; Defined at:
+  1584 ;;		line 307 in file "mcc_generated_files/pic18f_bootload.c"
+  1585 ;; Parameters:    Size  Location     Type
+  1586 ;;		None
+  1587 ;; Auto vars:     Size  Location     Type
+  1588 ;;  i               2    3[COMRAM] unsigned short 
+  1589 ;; Return value:  Size  Location     Type
+  1590 ;;                  1    wreg      unsigned char 
+  1591 ;; Registers used:
+  1592 ;;		wreg, status,2, status,0, cstack
+  1593 ;; Tracked objects:
+  1594 ;;		On entry : 0/F
+  1595 ;;		On exit  : 0/0
+  1596 ;;		Unchanged: 0/0
+  1597 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+  1598 ;;      Params:         0       0       0       0       0       0       0
+  1599 ;;      Locals:         2       0       0       0       0       0       0
+  1600 ;;      Temps:          3       0       0       0       0       0       0
+  1601 ;;      Totals:         5       0       0       0       0       0       0
+  1602 ;;Total ram usage:        5 bytes
+  1603 ;; Hardware stack levels used:    1
+  1604 ;; Hardware stack levels required when called:    1
+  1605 ;; This function calls:
+  1606 ;;		_StartWrite
+  1607 ;; This function is called by:
+  1608 ;;		_ProcessBootBuffer
+  1609 ;; This function uses a non-reentrant model
+  1610 ;;
+  1611                           
+  1612                           	psect	text15
+  1613  00011E                     __ptext15:
+  1614                           	opt callstack 0
+  1615  00011E                     _Erase_Flash:
+  1616                           	opt callstack 0
+  1617                           
+  1618                           ;mcc_generated_files/pic18f_bootload.c: 309:     TBLPTRL = frame.address_L;
+  1619                           
+  1620                           ;incstack = 0
+  1621                           
+  1622                           ;mcc_generated_files/pic18f_bootload.c: 310:     TBLPTRH = frame.address_H;
+  1623                           
+  1624                           ;mcc_generated_files/pic18f_bootload.c: 311:     TBLPTRU = frame.address_U;
+  1625  00011E  D82B               	call	PL2	;call to abstracted procedure
+  1626                           
+  1627                           ;mcc_generated_files/pic18f_bootload.c: 312:     if ((TBLPTR & (~(64 - 1))) < 0x500)
+  1628  000120  0EC0               	movlw	192
+  1629  000122  14F6               	andwf	246,w,c	;volatile
+  1630  000124  6E4F               	movwf	??_Erase_Flash^0,c
+  1631  000126  0EFF               	movlw	255
+  1632  000128  14F7               	andwf	247,w,c	;volatile
+  1633  00012A  6E50               	movwf	(??_Erase_Flash+1)^0,c
+  1634  00012C  0EFF               	movlw	255
+  1635  00012E  14F8               	andwf	248,w,c	;volatile
+  1636  000130  6E51               	movwf	(??_Erase_Flash+2)^0,c
+  1637  000132  5051               	movf	(??_Erase_Flash+2)^0,w,c
+  1638  000134  E104               	bnz	l96
+  1639  000136  0E05               	movlw	5
+  1640  000138  5C50               	subwf	(??_Erase_Flash+1)^0,w,c
+  1641  00013A  E201               	bc	l96
+  1642  00013C                     u80:
+  1643  00013C                     l1174:
+  1644                           
+  1645                           ;mcc_generated_files/pic18f_bootload.c: 313:     {;mcc_generated_files/pic18f_bootload.c
+      +                          : 314:         frame.data[0] = 0xFE;
+  1646                           
+  1647                           ;mcc_generated_files/pic18f_bootload.c: 315:         return (10);
+  1648  00013C  D023               	goto	PL12	;call to abstracted procedure
+  1649  00013E                     l96:
+  1650                           
+  1651                           ;mcc_generated_files/pic18f_bootload.c: 317:     for (uint16_t i=0; i < frame.data_lengt
+      +                          h; i++)
+  1652  00013E  6A52               	clrf	Erase_Flash@i^0,c
+  1653  000140  6A53               	clrf	(Erase_Flash@i+1)^0,c
+  1654  000142  D00F               	goto	l1196
+  1655  000144                     l1180:
+  1656                           
+  1657                           ;mcc_generated_files/pic18f_bootload.c: 318:     {;mcc_generated_files/pic18f_bootload.c
+      +                          : 319:         if (TBLPTR >= 0x8000)
+  1658  000144  50F8               	movf	248,w,c	;volatile
+  1659  000146  E11E               	bnz	PL12
+  1660  000148  D820               	call	PL14	;call to abstracted procedure
+  1661  00014A  E21C               	bc	PL12
+  1662                           
+  1663                           ;mcc_generated_files/pic18f_bootload.c: 324:         EECON1 = 0x94;
+  1664  00014C  0E94               	movlw	148
+  1665  00014E  6EA6               	movwf	166,c	;volsfr
+  1666                           
+  1667                           ;mcc_generated_files/pic18f_bootload.c: 325:         StartWrite();
+  1668  000150  EC1B  F002         	call	_StartWrite	;wreg free
+  1669                           
+  1670                           ;mcc_generated_files/pic18f_bootload.c: 326:         TBLPTR += 64;
+  1671  000154  0E40               	movlw	64
+  1672  000156  26F6               	addwf	246,f,c	;volatile
+  1673  000158  0E00               	movlw	0
+  1674  00015A  22F7               	addwfc	247,f,c	;volatile
+  1675  00015C  22F8               	addwfc	248,f,c	;volatile
+  1676                           
+  1677                           ;mcc_generated_files/pic18f_bootload.c: 327:     }
+  1678  00015E  4A52               	infsnz	Erase_Flash@i^0,f,c
+  1679  000160  2A53               	incf	(Erase_Flash@i+1)^0,f,c
+  1680  000162                     l1196:
+  1681  000162  5003               	movf	(_frame+1)^0,w,c
+  1682  000164  5C52               	subwf	Erase_Flash@i^0,w,c
+  1683  000166  5004               	movf	(_frame+2)^0,w,c
+  1684  000168  5853               	subwfb	(Erase_Flash@i+1)^0,w,c
+  1685  00016A  E3EC               	bnc	l1180
+  1686                           
+  1687                           ;mcc_generated_files/pic18f_bootload.c: 328:     frame.data[0] = 0x01;
+  1688  00016C  0E01               	movlw	1
+  1689  00016E  6E0B               	movwf	(_frame+9)^0,c
+  1690                           
+  1691                           ;mcc_generated_files/pic18f_bootload.c: 329:     frame.EE_key_1 = 0x00;
+  1692  000170  6A05               	clrf	(_frame+3)^0,c
+  1693                           
+  1694                           ;mcc_generated_files/pic18f_bootload.c: 330:     frame.EE_key_2 = 0x00;
+  1695  000172  6A06               	clrf	(_frame+4)^0,c
+  1696  000174  0C0A               	retlw	10
+  1697  000176                     __end_of_Erase_Flash:
+  1698                           	opt callstack 0
+  1699  000176                     PL2:
+  1700                           	opt callstack 25
+  1701  000176  C007  FFF6         	movff	_frame+5,tblptrl	;volatile
+  1702  00017A  C008  FFF7         	movff	_frame+6,tblptrh	;volatile
+  1703  00017E  C009  FFF8         	movff	_frame+7,tblptru	;volatile
+  1704  000182  0012               	return	
+  1705  000184                     __end_ofPL2:
+  1706                           	opt callstack 0
+  1707  000184                     PL12:
+  1708                           	opt callstack 25
+  1709  000184  0EFE               	movlw	254
+  1710  000186  6E0B               	movwf	(_frame+9)^0,c
+  1711  000188  0C0A               	retlw	10
+  1712  00018A                     __end_ofPL12:
+  1713                           	opt callstack 0
+  1714  00018A                     PL14:
+  1715                           	opt callstack 25
+  1716  00018A  0E00               	movlw	0
+  1717  00018C  5CF6               	subwf	246,w,c	;volatile
+  1718  00018E  0E80               	movlw	128
+  1719  000190  58F7               	subwfb	247,w,c	;volatile
+  1720  000192  0012               	return	
+  1721  000194                     __end_ofPL14:
+  1722                           	opt callstack 0
+  1723                           
+  1724 ;; *************** function _StartWrite *****************
+  1725 ;; Defined at:
+  1726 ;;		line 438 in file "mcc_generated_files/pic18f_bootload.c"
+  1727 ;; Parameters:    Size  Location     Type
+  1728 ;;		None
+  1729 ;; Auto vars:     Size  Location     Type
+  1730 ;;		None
+  1731 ;; Return value:  Size  Location     Type
+  1732 ;;                  1    wreg      void 
+  1733 ;; Registers used:
+  1734 ;;		None
+  1735 ;; Tracked objects:
+  1736 ;;		On entry : 0/F
+  1737 ;;		On exit  : 0/0
+  1738 ;;		Unchanged: 0/0
+  1739 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+  1740 ;;      Params:         0       0       0       0       0       0       0
+  1741 ;;      Locals:         0       0       0       0       0       0       0
+  1742 ;;      Temps:          0       0       0       0       0       0       0
+  1743 ;;      Totals:         0       0       0       0       0       0       0
+  1744 ;;Total ram usage:        0 bytes
+  1745 ;; Hardware stack levels used:    1
+  1746 ;; This function calls:
+  1747 ;;		Nothing
+  1748 ;; This function is called by:
+  1749 ;;		_Write_Flash
+  1750 ;;		_Erase_Flash
+  1751 ;;		_Write_Config
+  1752 ;; This function uses a non-reentrant model
+  1753 ;;
+  1754                           
+  1755                           	psect	text16
+  1756  000436                     __ptext16:
+  1757                           	opt callstack 0
+  1758  000436                     _StartWrite:
+  1759                           	opt callstack 25
+  1760                           
+  1761                           ;mcc_generated_files/pic18f_bootload.c: 440:     EECON2 = EE_Key_1;
+  1762                           
+  1763                           ;incstack = 0
+  1764  000436  C000 FFA7          	movff	0,4007	;volsfr
+  1765                           
+  1766                           ;mcc_generated_files/pic18f_bootload.c: 441:     EECON2 = EE_Key_2;
+  1767  00043A  C001 FFA7          	movff	1,4007	;volsfr
+  1768                           
+  1769                           ;mcc_generated_files/pic18f_bootload.c: 442:     EECON1bits.WR = 1;
+  1770  00043E  82A6               	bsf	166,1,c	;volsfr
+  1771                           
+  1772                           ;mcc_generated_files/pic18f_bootload.c: 443:     __nop();
+  1773  000440  F000               	nop	
+  1774                           
+  1775                           ;mcc_generated_files/pic18f_bootload.c: 444:     __nop();
+  1776  000442  F000               	nop	
+  1777                           
+  1778                           ;mcc_generated_files/pic18f_bootload.c: 445:     return;
+  1779  000444  0012               	return		;funcret
+  1780  000446                     __end_of_StartWrite:
+  1781                           	opt callstack 0
+  1782                           
+  1783 ;; *************** function _EUSART1_Write *****************
+  1784 ;; Defined at:
+  1785 ;;		line 132 in file "mcc_generated_files/eusart1.c"
+  1786 ;; Parameters:    Size  Location     Type
+  1787 ;;  txData          1    wreg     unsigned char 
+  1788 ;; Auto vars:     Size  Location     Type
+  1789 ;;  txData          1    0[COMRAM] unsigned char 
+  1790 ;; Return value:  Size  Location     Type
+  1791 ;;                  1    wreg      void 
+  1792 ;; Registers used:
+  1793 ;;		wreg
+  1794 ;; Tracked objects:
+  1795 ;;		On entry : 0/F
+  1796 ;;		On exit  : 0/0
+  1797 ;;		Unchanged: 0/0
+  1798 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+  1799 ;;      Params:         0       0       0       0       0       0       0
+  1800 ;;      Locals:         1       0       0       0       0       0       0
+  1801 ;;      Temps:          0       0       0       0       0       0       0
+  1802 ;;      Totals:         1       0       0       0       0       0       0
+  1803 ;;Total ram usage:        1 bytes
+  1804 ;; Hardware stack levels used:    1
+  1805 ;; This function calls:
+  1806 ;;		Nothing
+  1807 ;; This function is called by:
+  1808 ;;		_Run_Bootloader
+  1809 ;; This function uses a non-reentrant model
+  1810 ;;
+  1811                           
+  1812                           	psect	text17
+  1813  000452                     __ptext17:
+  1814                           	opt callstack 0
+  1815  000452                     _EUSART1_Write:
+  1816                           	opt callstack 27
+  1817                           
+  1818                           ;incstack = 0
+  1819                           ;EUSART1_Write@txData stored from wreg
+  1820  000452  6E4F               	movwf	EUSART1_Write@txData^0,c
+  1821  000454                     
+  1822                           ;mcc_generated_files/eusart1.c: 134:     while(0 == PIR1bits.TX1IF)
+  1823                           
+  1824                           ;mcc_generated_files/eusart1.c: 135:     {;mcc_generated_files/eusart1.c: 136:     }
+  1825  000454  A89E               	btfss	158,4,c	;volatile
+  1826  000456  D7FE               	goto	l1308
+  1827                           
+  1828                           ;mcc_generated_files/eusart1.c: 138:     TXREG1 = txData;
+  1829  000458  C04F  FFAD         	movff	EUSART1_Write@txData,4013	;volatile
+  1830  00045C  0012               	return		;funcret
+  1831  00045E                     __end_of_EUSART1_Write:
+  1832                           	opt callstack 0
+  1833                           
+  1834 ;; *************** function _EUSART1_Read *****************
+  1835 ;; Defined at:
+  1836 ;;		line 113 in file "mcc_generated_files/eusart1.c"
+  1837 ;; Parameters:    Size  Location     Type
+  1838 ;;		None
+  1839 ;; Auto vars:     Size  Location     Type
+  1840 ;;		None
+  1841 ;; Return value:  Size  Location     Type
+  1842 ;;                  1    wreg      unsigned char 
+  1843 ;; Registers used:
+  1844 ;;		wreg, status,2
+  1845 ;; Tracked objects:
+  1846 ;;		On entry : 0/F
+  1847 ;;		On exit  : 0/0
+  1848 ;;		Unchanged: 0/0
+  1849 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+  1850 ;;      Params:         0       0       0       0       0       0       0
+  1851 ;;      Locals:         0       0       0       0       0       0       0
+  1852 ;;      Temps:          0       0       0       0       0       0       0
+  1853 ;;      Totals:         0       0       0       0       0       0       0
+  1854 ;;Total ram usage:        0 bytes
+  1855 ;; Hardware stack levels used:    1
+  1856 ;; This function calls:
+  1857 ;;		Nothing
+  1858 ;; This function is called by:
+  1859 ;;		_Run_Bootloader
+  1860 ;; This function uses a non-reentrant model
+  1861 ;;
+  1862                           
+  1863                           	psect	text18
+  1864  000414                     __ptext18:
+  1865                           	opt callstack 0
+  1866  000414                     _EUSART1_Read:
+  1867                           	opt callstack 27
+  1868                           
+  1869                           ;mcc_generated_files/eusart1.c: 115:     while(!PIR1bits.RC1IF)
+  1870                           
+  1871                           ;mcc_generated_files/eusart1.c: 116:     {;mcc_generated_files/eusart1.c: 117:     }
+  1872                           
+  1873                           ;incstack = 0
+  1874  000414  AA9E               	btfss	158,5,c	;volatile
+  1875  000416  D7FE               	goto	_EUSART1_Read
+  1876                           
+  1877                           ;mcc_generated_files/eusart1.c: 119:     eusart1RxLastError.status = 0;
+  1878  000418  6A4D               	clrf	_eusart1RxLastError^0,c	;volatile
+  1879                           
+  1880                           ;mcc_generated_files/eusart1.c: 121:     if(1 == RCSTA1bits.OERR)
+  1881  00041A  A2AB               	btfss	171,1,c	;volatile
+  1882  00041C  D002               	goto	l1304
+  1883                           
+  1884                           ;mcc_generated_files/eusart1.c: 122:     {;mcc_generated_files/eusart1.c: 125:         R
+      +                          CSTA1bits.CREN = 0;
+  1885  00041E  98AB               	bcf	171,4,c	;volatile
+  1886                           
+  1887                           ;mcc_generated_files/eusart1.c: 126:         RCSTA1bits.CREN = 1;
+  1888  000420  88AB               	bsf	171,4,c	;volatile
+  1889  000422                     l1304:
+  1890                           
+  1891                           ;mcc_generated_files/eusart1.c: 129:     return RCREG1;
+  1892  000422  50AE               	movf	174,w,c	;volatile
+  1893  000424  0012               	return		;funcret
+  1894  000426                     __end_of_EUSART1_Read:
+  1895                           	opt callstack 0
+  1896                           
+  1897 ;; *************** function _Check_Device_Reset *****************
+  1898 ;; Defined at:
+  1899 ;;		line 453 in file "mcc_generated_files/pic18f_bootload.c"
+  1900 ;; Parameters:    Size  Location     Type
+  1901 ;;		None
+  1902 ;; Auto vars:     Size  Location     Type
+  1903 ;;		None
+  1904 ;; Return value:  Size  Location     Type
+  1905 ;;                  1    wreg      void 
+  1906 ;; Registers used:
+  1907 ;;		wreg, status,2, status,0
+  1908 ;; Tracked objects:
+  1909 ;;		On entry : 0/F
+  1910 ;;		On exit  : 0/0
+  1911 ;;		Unchanged: 0/0
+  1912 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+  1913 ;;      Params:         0       0       0       0       0       0       0
+  1914 ;;      Locals:         0       0       0       0       0       0       0
+  1915 ;;      Temps:          0       0       0       0       0       0       0
+  1916 ;;      Totals:         0       0       0       0       0       0       0
+  1917 ;;Total ram usage:        0 bytes
+  1918 ;; Hardware stack levels used:    1
+  1919 ;; This function calls:
+  1920 ;;		Nothing
+  1921 ;; This function is called by:
+  1922 ;;		_Run_Bootloader
+  1923 ;; This function uses a non-reentrant model
+  1924 ;;
+  1925                           
+  1926                           	psect	text19
+  1927  00045E                     __ptext19:
+  1928                           	opt callstack 0
+  1929  00045E                     _Check_Device_Reset:
+  1930                           	opt callstack 27
+  1931                           
+  1932                           ;mcc_generated_files/pic18f_bootload.c: 455:     if (reset_pending == 1)
+  1933                           
+  1934                           ;incstack = 0
+  1935  00045E  044E               	decf	_reset_pending^0,w,c
+  1936  000460  A4D8               	btfss	status,2,c
+  1937  000462  0012               	return	
+  1938                           
+  1939                           ;mcc_generated_files/pic18f_bootload.c: 456:     {;mcc_generated_files/pic18f_bootload.c
+      +                          : 457:         LATAbits.LATA7 = 0;
+  1940  000464  9E89               	bcf	137,7,c	;volatile
+  1941  000466  00FF               	reset		;# 
+  1942  000468  0012               	return		;funcret
+  1943  00046A                     __end_of_Check_Device_Reset:
+  1944                           	opt callstack 0
+  1945                           
+  1946 ;; *************** function _Bootload_Required *****************
+  1947 ;; Defined at:
+  1948 ;;		line 148 in file "mcc_generated_files/pic18f_bootload.c"
+  1949 ;; Parameters:    Size  Location     Type
+  1950 ;;		None
+  1951 ;; Auto vars:     Size  Location     Type
+  1952 ;;  Stored_Check    2    4[COMRAM] unsigned short 
+  1953 ;; Return value:  Size  Location     Type
+  1954 ;;                  1    wreg      _Bool 
+  1955 ;; Registers used:
+  1956 ;;		wreg, status,2, status,0, cstack
+  1957 ;; Tracked objects:
+  1958 ;;		On entry : 0/F
+  1959 ;;		On exit  : 0/0
+  1960 ;;		Unchanged: 0/0
+  1961 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+  1962 ;;      Params:         0       0       0       0       0       0       0
+  1963 ;;      Locals:         2       0       0       0       0       0       0
+  1964 ;;      Temps:          0       0       0       0       0       0       0
+  1965 ;;      Totals:         2       0       0       0       0       0       0
+  1966 ;;Total ram usage:        2 bytes
+  1967 ;; Hardware stack levels used:    1
+  1968 ;; Hardware stack levels required when called:    1
+  1969 ;; This function calls:
+  1970 ;;		_Calc_Checksum
+  1971 ;; This function is called by:
+  1972 ;;		_BOOTLOADER_Initialize
+  1973 ;; This function uses a non-reentrant model
+  1974 ;;
+  1975                           
+  1976                           	psect	text20
+  1977  000342                     __ptext20:
+  1978                           	opt callstack 0
+  1979  000342                     _Bootload_Required:
+  1980                           	opt callstack 27
+  1981                           
+  1982                           ;mcc_generated_files/pic18f_bootload.c: 154:     uint16_t Stored_Checksum;;mcc_generated
+      +                          _files/pic18f_bootload.c: 156:     frame.address_L = (uint8_t) (0x500 & 0x0000FF);
+  1983                           
+  1984                           ;incstack = 0
+  1985  000342  6A07               	clrf	(_frame+5)^0,c
+  1986                           
+  1987                           ;mcc_generated_files/pic18f_bootload.c: 157:     frame.address_H = (uint8_t) ((0x500 & 0
+      +                          x00FF00) >> 8);
+  1988  000344  0E05               	movlw	5
+  1989  000346  6E08               	movwf	(_frame+6)^0,c
+  1990                           
+  1991                           ;mcc_generated_files/pic18f_bootload.c: 158:     frame.address_U = (uint8_t) ((0x500 & 0
+      +                          xFF0000) >> 16);
+  1992  000348  6A09               	clrf	(_frame+7)^0,c
+  1993                           
+  1994                           ;mcc_generated_files/pic18f_bootload.c: 159:     frame.data_length = (0x8000 - 0x500 - 2
+      +                          );
+  1995  00034A  0E7A               	movlw	122
+  1996  00034C  6E04               	movwf	(_frame+2)^0,c
+  1997  00034E  0EFE               	movlw	254
+  1998  000350  6E03               	movwf	(_frame+1)^0,c
+  1999                           
+  2000                           ;mcc_generated_files/pic18f_bootload.c: 163:     Calc_Checksum ();
+  2001  000352  EC7E  F001         	call	_Calc_Checksum	;wreg free
+  2002                           
+  2003                           ;mcc_generated_files/pic18f_bootload.c: 164:     TBLPTR = (0x8000 - 2);
+  2004  000356  0EFE               	movlw	254
+  2005  000358  6EF6               	movwf	246,c	;volatile
+  2006  00035A  0E7F               	movlw	127
+  2007  00035C  6EF7               	movwf	247,c	;volatile
+  2008  00035E  6AF8               	clrf	248,c	;volatile
+  2009  000360  0009               	tblrd		*+	;# 
+  2010                           
+  2011                           ;mcc_generated_files/pic18f_bootload.c: 166:     Stored_Checksum = TABLAT;
+  2012  000362  CFF5 F053          	movff	tablat,Bootload_Required@Stored_Checksum	;volatile
+  2013  000366  6A54               	clrf	(Bootload_Required@Stored_Checksum+1)^0,c
+  2014  000368  0009               	tblrd		*+	;# 
+  2015                           
+  2016                           ;mcc_generated_files/pic18f_bootload.c: 168:     Stored_Checksum += ((uint16_t)TABLAT) <
+      +                          < 8;
+  2017  00036A  50F5               	movf	245,w,c	;volatile
+  2018  00036C  2654               	addwf	(Bootload_Required@Stored_Checksum+1)^0,f,c
+  2019                           
+  2020                           ;mcc_generated_files/pic18f_bootload.c: 170:     if (Stored_Checksum != check_sum)
+  2021  00036E  504B               	movf	_check_sum^0,w,c
+  2022  000370  1853               	xorwf	Bootload_Required@Stored_Checksum^0,w,c
+  2023  000372  E103               	bnz	u200
+  2024  000374  504C               	movf	(_check_sum+1)^0,w,c
+  2025  000376  1854               	xorwf	(Bootload_Required@Stored_Checksum+1)^0,w,c
+  2026  000378  E001               	bz	l1332
+  2027  00037A                     u200:
+  2028                           
+  2029                           ;mcc_generated_files/pic18f_bootload.c: 171:     {;mcc_generated_files/pic18f_bootload.c
+      +                          : 172:         return (1);
+  2030  00037A  0C01               	retlw	1
+  2031  00037C                     l1332:
+  2032                           
+  2033                           ;mcc_generated_files/pic18f_bootload.c: 174:  return (0);
+  2034  00037C  0C00               	retlw	0	;funcret
+  2035  00037E                     __end_of_Bootload_Required:
+  2036                           	opt callstack 0
+  2037                           
+  2038 ;; *************** function _Calc_Checksum *****************
+  2039 ;; Defined at:
+  2040 ;;		line 401 in file "mcc_generated_files/pic18f_bootload.c"
+  2041 ;; Parameters:    Size  Location     Type
+  2042 ;;		None
+  2043 ;; Auto vars:     Size  Location     Type
+  2044 ;;  i               2    2[COMRAM] unsigned short 
+  2045 ;;  length          2    0[COMRAM] unsigned short 
+  2046 ;; Return value:  Size  Location     Type
+  2047 ;;                  1    wreg      unsigned char 
+  2048 ;; Registers used:
+  2049 ;;		wreg, status,2, status,0
+  2050 ;; Tracked objects:
+  2051 ;;		On entry : 0/F
+  2052 ;;		On exit  : 0/0
+  2053 ;;		Unchanged: 0/0
+  2054 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+  2055 ;;      Params:         0       0       0       0       0       0       0
+  2056 ;;      Locals:         4       0       0       0       0       0       0
+  2057 ;;      Temps:          0       0       0       0       0       0       0
+  2058 ;;      Totals:         4       0       0       0       0       0       0
+  2059 ;;Total ram usage:        4 bytes
+  2060 ;; Hardware stack levels used:    1
+  2061 ;; This function calls:
+  2062 ;;		Nothing
+  2063 ;; This function is called by:
+  2064 ;;		_Bootload_Required
+  2065 ;;		_ProcessBootBuffer
+  2066 ;; This function uses a non-reentrant model
+  2067 ;;
+  2068                           
+  2069                           	psect	text21
+  2070  0002FC                     __ptext21:
+  2071                           	opt callstack 0
+  2072  0002FC                     _Calc_Checksum:
+  2073                           	opt callstack 0
+  2074                           
+  2075                           ;mcc_generated_files/pic18f_bootload.c: 407:     uint16_t i;;mcc_generated_files/pic18f_
+      +                          bootload.c: 408:     uint16_t length;;mcc_generated_files/pic18f_bootload.c: 411:     TB
+      +                          LPTRL = frame.address_L;
+  2076                           
+  2077                           ;incstack = 0
+  2078                           
+  2079                           ;mcc_generated_files/pic18f_bootload.c: 412:     TBLPTRH = frame.address_H;
+  2080                           
+  2081                           ;mcc_generated_files/pic18f_bootload.c: 413:     TBLPTRU = frame.address_U;
+  2082  0002FC  ECBB  F000         	call	PL2	;call to abstracted procedure
+  2083                           
+  2084                           ;mcc_generated_files/pic18f_bootload.c: 414:     EECON1 = 0x80;
+  2085  000300  0E80               	movlw	128
+  2086  000302  6EA6               	movwf	166,c	;volsfr
+  2087                           
+  2088                           ;mcc_generated_files/pic18f_bootload.c: 415:     check_sum = 0;
+  2089  000304  6A4B               	clrf	_check_sum^0,c
+  2090  000306  6A4C               	clrf	(_check_sum+1)^0,c
+  2091                           
+  2092                           ;mcc_generated_files/pic18f_bootload.c: 416:     length = frame.data_length;
+  2093  000308  C003  F04F         	movff	_frame+1,Calc_Checksum@length
+  2094  00030C  C004  F050         	movff	_frame+2,Calc_Checksum@length+1
+  2095                           
+  2096                           ;mcc_generated_files/pic18f_bootload.c: 420:     for (i = 0; i < length; i += 2)
+  2097  000310  6A51               	clrf	Calc_Checksum@i^0,c
+  2098  000312  6A52               	clrf	(Calc_Checksum@i+1)^0,c
+  2099  000314  D00C               	goto	l1084
+  2100  000316                     l121:
+  2101  000316  0009               	tblrd		*+	;# 
+  2102                           
+  2103                           ;mcc_generated_files/pic18f_bootload.c: 423:         check_sum += (uint16_t)TABLAT;
+  2104  000318  50F5               	movf	245,w,c	;volatile
+  2105  00031A  264B               	addwf	_check_sum^0,f,c
+  2106  00031C  0E00               	movlw	0
+  2107  00031E  224C               	addwfc	(_check_sum+1)^0,f,c
+  2108  000320  0009               	tblrd		*+	;# 
+  2109                           
+  2110                           ;mcc_generated_files/pic18f_bootload.c: 425:         check_sum += (uint16_t)TABLAT << 8;
+  2111  000322  50F5               	movf	245,w,c	;volatile
+  2112  000324  264C               	addwf	(_check_sum+1)^0,f,c
+  2113                           
+  2114                           ;mcc_generated_files/pic18f_bootload.c: 426:      }
+  2115  000326  0E02               	movlw	2
+  2116  000328  2651               	addwf	Calc_Checksum@i^0,f,c
+  2117  00032A  0E00               	movlw	0
+  2118  00032C  2252               	addwfc	(Calc_Checksum@i+1)^0,f,c
+  2119  00032E                     l1084:
+  2120  00032E  504F               	movf	Calc_Checksum@length^0,w,c
+  2121  000330  5C51               	subwf	Calc_Checksum@i^0,w,c
+  2122  000332  5050               	movf	(Calc_Checksum@length+1)^0,w,c
+  2123  000334  5852               	subwfb	(Calc_Checksum@i+1)^0,w,c
+  2124  000336  E3EF               	bnc	l121
+  2125                           
+  2126                           ;mcc_generated_files/pic18f_bootload.c: 427:      frame.data[0] = (uint8_t) (check_sum &
+      +                           0x00FF);
+  2127  000338  C04B  F00B         	movff	_check_sum,_frame+9
+  2128                           
+  2129                           ;mcc_generated_files/pic18f_bootload.c: 428:      frame.data[1] = (uint8_t)((check_sum &
+      +                           0xFF00) >> 8);
+  2130  00033C  C04C  F00C         	movff	_check_sum+1,_frame+10
+  2131                           
+  2132                           ;mcc_generated_files/pic18f_bootload.c: 429:      return (11);
+  2133  000340  0C0B               	retlw	11	;funcret
+  2134  000342                     __end_of_Calc_Checksum:
+  2135                           	opt callstack 0
+  2136  0000                     
+  2137                           	psect	rparam
+  2138  0000                     tosu	equ	0xFFF
+  2139                           tosh	equ	0xFFE
+  2140                           tosl	equ	0xFFD
+  2141                           stkptr	equ	0xFFC
+  2142                           pclatu	equ	0xFFB
+  2143                           pclath	equ	0xFFA
+  2144                           pcl	equ	0xFF9
+  2145                           tblptru	equ	0xFF8
+  2146                           tblptrh	equ	0xFF7
+  2147                           tblptrl	equ	0xFF6
+  2148                           tablat	equ	0xFF5
+  2149                           prodh	equ	0xFF4
+  2150                           prodl	equ	0xFF3
+  2151                           indf0	equ	0xFEF
+  2152                           postinc0	equ	0xFEE
+  2153                           postdec0	equ	0xFED
+  2154                           preinc0	equ	0xFEC
+  2155                           plusw0	equ	0xFEB
+  2156                           fsr0h	equ	0xFEA
+  2157                           fsr0l	equ	0xFE9
+  2158                           wreg	equ	0xFE8
+  2159                           indf1	equ	0xFE7
+  2160                           postinc1	equ	0xFE6
+  2161                           postdec1	equ	0xFE5
+  2162                           preinc1	equ	0xFE4
+  2163                           plusw1	equ	0xFE3
+  2164                           fsr1h	equ	0xFE2
+  2165                           fsr1l	equ	0xFE1
+  2166                           bsr	equ	0xFE0
+  2167                           indf2	equ	0xFDF
+  2168                           postinc2	equ	0xFDE
+  2169                           postdec2	equ	0xFDD
+  2170                           preinc2	equ	0xFDC
+  2171                           plusw2	equ	0xFDB
+  2172                           fsr2h	equ	0xFDA
+  2173                           fsr2l	equ	0xFD9
+  2174                           status	equ	0xFD8
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         77
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           94     12      89
+    BANK0           160      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+
+Pointer List with Targets:
+
+    EUSART1_SetErrorHandler@interruptHandler	PTR FTN()void  size(2) Largest target is 1
+		 -> EUSART1_DefaultErrorHandler(), 
+
+    EUSART1_ErrorHandler	PTR FTN()void  size(2) Largest target is 1
+		 -> Absolute function(), EUSART1_DefaultErrorHandler(), 
+
+    EUSART1_SetOverrunErrorHandler@interruptHandler	PTR FTN()void  size(2) Largest target is 1
+		 -> EUSART1_DefaultOverrunErrorHandler(), 
+
+    EUSART1_OverrunErrorHandler	PTR FTN()void  size(2) Largest target is 1
+		 -> Absolute function(), EUSART1_DefaultOverrunErrorHandler(), 
+
+    EUSART1_SetFramingErrorHandler@interruptHandler	PTR FTN()void  size(2) Largest target is 1
+		 -> EUSART1_DefaultFramingErrorHandler(), 
+
+    EUSART1_FramingErrorHandler	PTR FTN()void  size(2) Largest target is 1
+		 -> Absolute function(), EUSART1_DefaultFramingErrorHandler(), 
+
+
+Critical Paths under _main in COMRAM
+
+    _EUSART1_Initialize->_EUSART1_SetErrorHandler
+    _EUSART1_Initialize->_EUSART1_SetFramingErrorHandler
+    _EUSART1_Initialize->_EUSART1_SetOverrunErrorHandler
+    _BOOTLOADER_Initialize->_Run_Bootloader
+    _Run_Bootloader->_ProcessBootBuffer
+    _ProcessBootBuffer->_Write_Flash
+    _Bootload_Required->_Calc_Checksum
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0     651
+                  _SYSTEM_Initialize
+ ---------------------------------------------------------------------------------
+ (1) _SYSTEM_Initialize                                    0     0      0     651
+              _BOOTLOADER_Initialize
+                 _EUSART1_Initialize
+              _OSCILLATOR_Initialize
+             _PIN_MANAGER_Initialize
+ ---------------------------------------------------------------------------------
+ (2) _PIN_MANAGER_Initialize                               0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _OSCILLATOR_Initialize                                0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _EUSART1_Initialize                                   0     0      0     261
+            _EUSART1_SetErrorHandler
+     _EUSART1_SetFramingErrorHandler
+     _EUSART1_SetOverrunErrorHandler
+ ---------------------------------------------------------------------------------
+ (3) _EUSART1_SetOverrunErrorHandler                       2     0      2      87
+                                              0 COMRAM     2     0      2
+ ---------------------------------------------------------------------------------
+ (3) _EUSART1_SetFramingErrorHandler                       2     0      2      87
+                                              0 COMRAM     2     0      2
+ ---------------------------------------------------------------------------------
+ (3) _EUSART1_SetErrorHandler                              2     0      2      87
+                                              0 COMRAM     2     0      2
+ ---------------------------------------------------------------------------------
+ (2) _BOOTLOADER_Initialize                                0     0      0     390
+                  _Bootload_Required
+                     _Run_Bootloader
+ ---------------------------------------------------------------------------------
+ (3) _Run_Bootloader                                       3     3      0     345
+                                              9 COMRAM     3     3      0
+                 _Check_Device_Reset
+                       _EUSART1_Read
+                      _EUSART1_Write
+                  _ProcessBootBuffer
+ ---------------------------------------------------------------------------------
+ (4) _ProcessBootBuffer                                    3     3      0     210
+                                              6 COMRAM     3     3      0
+                      _Calc_Checksum
+                        _Erase_Flash
+                   _Get_Version_Data
+                        _Read_Config
+                       _Write_Config
+                        _Write_Flash
+ ---------------------------------------------------------------------------------
+ (5) _Write_Flash                                          6     6      0      45
+                                              0 COMRAM     6     6      0
+                         _StartWrite
+ ---------------------------------------------------------------------------------
+ (5) _Write_Config                                         3     3      0      30
+                                              0 COMRAM     3     3      0
+                         _StartWrite
+ ---------------------------------------------------------------------------------
+ (5) _Read_Config                                          3     3      0      30
+                                              0 COMRAM     3     3      0
+ ---------------------------------------------------------------------------------
+ (5) _Get_Version_Data                                     1     1      0      45
+                                              0 COMRAM     1     1      0
+ ---------------------------------------------------------------------------------
+ (5) _Erase_Flash                                          5     5      0      15
+                                              0 COMRAM     5     5      0
+                         _StartWrite
+ ---------------------------------------------------------------------------------
+ (6) _StartWrite                                           0     0      0       0
+ ---------------------------------------------------------------------------------
+ (4) _EUSART1_Write                                        1     1      0      15
+                                              0 COMRAM     1     1      0
+ ---------------------------------------------------------------------------------
+ (4) _EUSART1_Read                                         0     0      0       0
+ ---------------------------------------------------------------------------------
+ (4) _Check_Device_Reset                                   0     0      0       0
+ ---------------------------------------------------------------------------------
+ (3) _Bootload_Required                                    2     2      0      45
+                                              4 COMRAM     2     2      0
+                      _Calc_Checksum
+ ---------------------------------------------------------------------------------
+ (5) _Calc_Checksum                                        4     4      0      30
+                                              0 COMRAM     4     4      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 6
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _SYSTEM_Initialize
+     _BOOTLOADER_Initialize
+       _Bootload_Required
+         _Calc_Checksum
+       _Run_Bootloader
+         _Check_Device_Reset
+         _EUSART1_Read
+         _EUSART1_Write
+         _ProcessBootBuffer
+           _Calc_Checksum
+           _Erase_Flash
+             _StartWrite
+           _Get_Version_Data
+           _Read_Config
+           _Write_Config
+             _StartWrite
+           _Write_Flash
+             _StartWrite
+     _EUSART1_Initialize
+       _EUSART1_SetErrorHandler
+       _EUSART1_SetFramingErrorHandler
+       _EUSART1_SetOverrunErrorHandler
+     _OSCILLATOR_Initialize
+     _PIN_MANAGER_Initialize
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BIGRAM             5FE      0       0      16        0.0%
+EEDATA             100      0       0       0        0.0%
+BITBANK5           100      0       0      14        0.0%
+BANK5              100      0       0      15        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK2           100      0       0       7        0.0%
+BANK2              100      0       0       8        0.0%
+BITBANK1           100      0       0       5        0.0%
+BANK1              100      0       0       6        0.0%
+BITBANK0            A0      0       0       3        0.0%
+BANK0               A0      0       0       4        0.0%
+BITCOMRAM           5E      0       0       0        0.0%
+COMRAM              5E      C      59       1       94.7%
+BITSFR_1             0      0       0     200        0.0%
+SFR_1                0      0       0     200        0.0%
+BITSFR               0      0       0     200        0.0%
+SFR                  0      0       0     200        0.0%
+STACK                0      0       0       2        0.0%
+NULL                 0      0       0       0        0.0%
+ABS                  0      0      59       9        0.0%
+DATA                 0      0      59      17        0.0%
+CODE                 0      0       0       0        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V2.10 build 88905656 
+Symbol Table                                                                                   Tue Apr 21 11:32:45 2020
+
+                                 ??_Erase_Flash 004F                                              PL2 0176  
+                                            PL4 02E6                                              PL6 0248  
+                                            PL8 02F0                                              l80 029E  
+                                            l76 01CA                                              l85 00B8  
+                                            l96 013E                                              u30 00B4  
+                                            u60 0104                                              u80 013C  
+                        __size_of_Calc_Checksum 0046                                    __CFG_CP0$OFF 000000  
+                                  __CFG_CP1$OFF 000000                                    __CFG_CP2$OFF 000000  
+                                  __CFG_CP3$OFF 000000                                             PL10 0254  
+                                           PL12 0184                                             PL14 018A  
+                                           PL16 0098                                     __CFG_LVP$ON 000000  
+                                           l104 02C4                                             l121 0316  
+                                           l107 02C8                                             l214 0034  
+                                           l215 002A                                             l218 0070  
+                                           l387 046E                            __size_of_Write_Flash 007C  
+                                  __CFG_CPB$OFF 000000                                             u200 037A  
+                                           u270 006C                                    __CFG_CPD$OFF 000000  
+                                           wreg 000FE8                                      _TXSTA1bits 000FAC  
+                         _BOOTLOADER_Initialize 03E6                                            l1140 00BE  
+                                          l1134 00B4                                            l1304 0422  
+                                          l1224 02D0                                            l1240 0210  
+                                          l1084 032E                                            l1332 037C  
+                                          l1308 0454                                            l1180 0144  
+                                          l1156 010C                                            l1174 013C  
+                                          l1158 0110                                            l1270 019E  
+                                          l1248 0228                                            l1256 0236  
+                                          l1280 01BC                                            l1272 01A4  
+                                          l1282 01C2                                            l1274 01AA  
+                                          l1370 0086                                            l1196 0162  
+                                          l1276 01B0                                            l1348 0046  
+                                          l1278 01B6                                            l1286 01D2  
+                                          l1374 0090                                            l1382 03F4  
+                                          l1288 01FA                                            _LATA 000F89  
+                                          _LATB 000F8A                           __size_of_Write_Config 004A  
+                                          _LATC 000F8B                                            _LATD 000F8C  
+                                          _LATE 000F8D                                            _WPUB 000F61  
+                                 _EUSART1_Write 0452                                            _main 046A  
+                                 ?_EUSART1_Read 004F                                            fsr2h 000FDA  
+                                          indf2 000FDF                                            fsr2l 000FD9  
+                                 __CFG_BORV$190 000000                                            start 001C  
+                                 __CFG_IESO$OFF 000000                                    ___param_bank 000000  
+                                 ??_Read_Config 004F                      __size_of_ProcessBootBuffer 006A  
+                __size_of_OSCILLATOR_Initialize 000C                   __end_of_OSCILLATOR_Initialize 0452  
+                                         ?_main 004F                             __end_of_Erase_Flash 0176  
+                                __CFG_DEBUG$OFF 000000                                           _TRISA 000F92  
+                                         _TRISB 000F93                                           _TRISC 000F94  
+                                         _TRISD 000F95                                           _TRISE 000F96  
+                                  _Write_Config 01FE                                   __CFG_WRT0$OFF 000000  
+                                 __CFG_WRT1$OFF 000000                                   __CFG_WRT2$OFF 000000  
+                                 __CFG_WRT3$OFF 000000                                  __CFG_EBTR0$OFF 000000  
+                                __CFG_FCMEN$OFF 000000                                  __CFG_EBTR1$OFF 000000  
+                                __CFG_EBTR2$OFF 000000                                  __CFG_EBTR3$OFF 000000  
+                                 __CFG_WRTB$OFF 000000                                   __CFG_WRTC$OFF 000000  
+                                 __CFG_WRTD$OFF 000000                                  __CFG_EBTRB$OFF 000000  
+                                         _frame 0002                              __CFG_MCLRE$EXTMCLR 000000  
+                                ?_EUSART1_Write 004F                                   _Calc_Checksum 02FC  
+                                ??_EUSART1_Read 004F                                           status 000FD8  
+                                __CFG_HFOFST$ON 000000              _EUSART1_DefaultFramingErrorHandler 000000  
+                                __CFG_PBADEN$ON 000000                                 __initialization 03FE  
+                    __end_of_EUSART1_Initialize 03E6                                    __end_of_main 0470  
+                                        ??_main 005B                                   __activetblptr 000002  
+                           __end_of_Read_Config 02E6                          ?_BOOTLOADER_Initialize 004F  
+                                        _EECON1 000FA6                                          _EECON2 000FA7  
+                                        _ANSELA 000F38                                          _ANSELB 000F39  
+                                        _ANSELC 000F3A                                          _ANSELD 000F3B  
+                                        _ANSELE 000F3C                                  ?_Calc_Checksum 004F  
+                                __CFG_WDTEN$OFF 000000                                          _TABLAT 000FF5  
+                                        _RCREG1 000FAE                                          _RCSTA1 000FAB  
+                                        _OSCCON 000FD3                                          _TBLPTR 000FF6  
+                                        _SPBRG1 000FAF                                          _STKPTR 000FFC  
+                                        _TXREG1 000FAD                                          _TXSTA1 000FAC  
+                     __size_of_Get_Version_Data 0052                                  __CFG_XINST$OFF 000000  
+                                   _Erase_Flash 011E                                  __CFG_STVREN$ON 000000  
+                      ?_EUSART1_SetErrorHandler 004F                                          clear_0 0404  
+              ??_EUSART1_SetOverrunErrorHandler 0051                 ?_EUSART1_SetOverrunErrorHandler 004F  
+                   __size_of_Check_Device_Reset 000C                                    Read_Config@i 0051  
+                                        tblptru 000FF8                                 ??_EUSART1_Write 004F  
+                                    _StartWrite 0436                               _SYSTEM_Initialize 0426  
+                                    __accesstop 0060                         __end_of__initialization 040A  
+                            ?_SYSTEM_Initialize 004F                                   ___rparam_used 000001  
+                                __pcstackCOMRAM 004F                             ??_SYSTEM_Initialize 005B  
+                                   _Read_Config 02B0                                      __end_ofPL2 0184  
+                                    __end_ofPL4 02F0                                      __end_ofPL6 0254  
+                                    __end_ofPL8 02FC                            __end_of_EUSART1_Read 0426  
+                               ??_Calc_Checksum 004F                       __end_of_SYSTEM_Initialize 0436  
+                               __CFG_PLLCFG$OFF 000000                                    Write_Flash@i 0053  
+               __end_of_EUSART1_SetErrorHandler 0476                              __CFG_CCP2MX$PORTC1 000000  
+                            __CFG_CCP3MX$PORTB5 000000                                   ??_Write_Flash 004F  
+        __end_of_EUSART1_SetFramingErrorHandler 0474         __size_of_EUSART1_SetFramingErrorHandler 0002  
+                _EUSART1_SetFramingErrorHandler 0472                                         _OSCCON2 000FD2  
+                                       _TBLPTRH 000FF7                                         _TBLPTRL 000FF6  
+                                       _TBLPTRU 000FF8                                         _OSCTUNE 000F9B  
+                                       _SPBRGH1 000FB0                                     ?_StartWrite 004F  
+                       __size_of_Run_Bootloader 0078                Bootload_Required@Stored_Checksum 0053  
+                              _Get_Version_Data 025E                                 __CFG_PWRTEN$OFF 000000  
+                                       __Hparam 0000                                         __Lparam 0000  
+                                       __pcinit 03FE                                         __ramtop 0600  
+                       ??_BOOTLOADER_Initialize 005B                                         __ptext0 046A  
+                                       __ptext1 0426                                         __ptext2 037E  
+                                       __ptext3 0446                                         __ptext4 03B2  
+                                       __ptext5 0470                                         __ptext6 0472  
+                                       __ptext7 0474                                         __ptext8 03E6  
+                                       __ptext9 0020                           _OSCILLATOR_Initialize 0446  
+                           __end_of_Write_Flash 011E                              _EUSART1_Initialize 03B2  
+                      ??_PIN_MANAGER_Initialize 004F                      __size_of_SYSTEM_Initialize 0010  
+                          end_of_initialization 040A                             ?_EUSART1_Initialize 004F  
+                                 __Lmediumconst 0000                                         postdec2 000FDD  
+                                  ?_Erase_Flash 004F                                         postinc0 000FEE  
+                                       postinc2 000FDE                           __size_of_EUSART1_Read 0012  
+                          ??_EUSART1_Initialize 0051                             __size_of_StartWrite 0010  
+              __size_of_EUSART1_SetErrorHandler 0002                             EUSART1_Write@txData 004F  
+                                  _EUSART1_Read 0414                                    ?_Read_Config 004F  
+                    __end_of_Check_Device_Reset 046A                                     _Write_Flash 00A2  
+                                   _BAUDCONbits 000FB8                          ?_OSCILLATOR_Initialize 004F  
+                                   __end_ofPL10 025E                                     __end_ofPL12 018A  
+                                   __end_ofPL14 0194                                     __end_ofPL16 00A2  
+                           start_initialization 03FE                 __size_of_PIN_MANAGER_Initialize 0034  
+                         __end_of_EUSART1_Write 045E                                  _Run_Bootloader 0020  
+                             _Bootload_Required 0342                              ?_Bootload_Required 004F  
+                           ??_Bootload_Required 0053                                   ?_Write_Config 004F  
+                      __end_of_Get_Version_Data 02B0                                     __pbssCOMRAM 0002  
+                                  ??_StartWrite 004F                           __end_of_Calc_Checksum 0342  
+                        __end_of_Run_Bootloader 0098                                   Write_Config@i 0051  
+              ??_EUSART1_SetFramingErrorHandler 0051                 ?_EUSART1_SetFramingErrorHandler 004F  
+                                     _check_sum 004B                       __end_of_Bootload_Required 037E  
+                        _PIN_MANAGER_Initialize 037E                            __size_of_Erase_Flash 0058  
+                            __end_of_StartWrite 0446                                __CFG_PRICLKEN$ON 000000  
+                                ??_Write_Config 004F                  __size_of_BOOTLOADER_Initialize 0018  
+                 __end_of_BOOTLOADER_Initialize 03FE                                        _BAUDCON1 000FB8  
+            _EUSART1_DefaultOverrunErrorHandler 000000                         _EUSART1_SetErrorHandler 0474  
+                               ?_Run_Bootloader 004F                                        _EE_Key_1 000000  
+                                      _EE_Key_2 000001                                        _LATAbits 000F89  
+       EUSART1_SetErrorHandler@interruptHandler 004F                                   _reset_pending 004E  
+                                      _PIR1bits 000F9E                                __CFG_WDTPS$32768 000000  
+                          __size_of_Read_Config 0036                        Run_Bootloader@msg_length 0059  
+                                   _INTCON2bits 000FF1                            ProcessBootBuffer@len 0057  
+                                    _EECON1bits 000FA6                      __size_of_Bootload_Required 003C  
+                                      __Hrparam 0000                                        __Lrparam 0000  
+                            __CFG_BOREN$SBORDIS 000000                               __CFG_P2BMX$PORTD2 000000  
+                       ??_OSCILLATOR_Initialize 004F                                    ?_Write_Flash 004F  
+                   __size_of_EUSART1_Initialize 0034                       ??_EUSART1_SetErrorHandler 0051  
+                   _EUSART1_DefaultErrorHandler 000000                              _Check_Device_Reset 045E  
+                                      __ptext10 0194                                        __ptext11 00A2  
+                                      __ptext20 0342                                        __ptext12 01FE  
+                                      __ptext21 02FC                                        __ptext13 02B0  
+                                      __ptext14 025E                                        __ptext15 011E  
+                                      __ptext16 0436                                        __ptext17 0452  
+                                      __ptext18 0414                                        __ptext19 045E  
+                           ?_Check_Device_Reset 004F                                   __size_of_main 0006  
+                              Run_Bootloader@ch 0058                            __end_of_Write_Config 0248  
+                           Calc_Checksum@length 004F                             Run_Bootloader@index 005A  
+EUSART1_SetOverrunErrorHandler@interruptHandler 004F                            ??_Check_Device_Reset 004F  
+                             _ProcessBootBuffer 0194                               Get_Version_Data@i 004F  
+                            ?_ProcessBootBuffer 004F                               ?_Get_Version_Data 004F  
+                            ??_Get_Version_Data 004F                             ??_ProcessBootBuffer 0055  
+                       ?_PIN_MANAGER_Initialize 004F          __end_of_EUSART1_SetOverrunErrorHandler 0472  
+       __size_of_EUSART1_SetOverrunErrorHandler 0002                  _EUSART1_SetOverrunErrorHandler 0470  
+                                    _RCSTA1bits 000FAB  EUSART1_SetFramingErrorHandler@interruptHandler 004F  
+                     __end_of_ProcessBootBuffer 01FE                          __size_of_EUSART1_Write 000C  
+                            _eusart1RxLastError 004D                                    Erase_Flash@i 0052  
+                              ??_Run_Bootloader 0058                               __CFG_T3CMX$PORTC0 000000  
+                __end_of_PIN_MANAGER_Initialize 03B2                               __CFG_FOSC$INTIO67 000000  
+                                Calc_Checksum@i 0051  
